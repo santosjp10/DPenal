@@ -1,0 +1,2068 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Direito Penal — Código Penal Arts. 1–31</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #C9A84C;
+  --gold-light: #F0D88A;
+  --gold-dark: #8B6914;
+  --ink: #0F0E0C;
+  --parchment: #F8F4EC;
+  --parchment-dark: #EDE7D9;
+  --crimson: #8B1A1A;
+  --crimson-light: #C62828;
+  --navy: #1A2744;
+  --navy-light: #243354;
+  --slate: #4A5568;
+  --mint: #1A5C4A;
+  --mint-light: #E8F5F0;
+  --amber-soft: #FFF8E7;
+  --border: rgba(201,168,76,0.25);
+  --sidebar-w: 300px;
+  --transition: 0.2s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Source Serif 4', Georgia, serif;
+  background: var(--parchment);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: var(--navy);
+  border-bottom: 3px solid var(--gold);
+  padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 38px;
+  height: 38px;
+  background: var(--gold);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--navy);
+}
+
+.brand-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.brand-sub {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.7rem;
+  color: var(--gold-light);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+}
+
+.header-nav {
+  display: flex;
+  gap: 4px;
+}
+
+.nav-btn {
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold-light);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.nav-btn:hover, .nav-btn.active {
+  background: var(--gold);
+  color: var(--navy);
+  border-color: var(--gold);
+}
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(201,168,76,0.4);
+  color: var(--gold-light);
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== LAYOUT ===== */
+.app-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  height: calc(100vh - 64px);
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: var(--sidebar-w);
+  background: var(--navy);
+  overflow-y: auto;
+  flex-shrink: 0;
+  border-right: 2px solid var(--gold);
+  transition: transform 0.3s ease;
+}
+
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 2px; }
+
+.sidebar-section {
+  padding: 1rem 0;
+}
+
+.sidebar-heading {
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  text-transform: uppercase;
+  padding: 0 1rem 0.5rem;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  border-left: 3px solid transparent;
+}
+
+.sidebar-item:hover {
+  background: rgba(201,168,76,0.08);
+  border-left-color: rgba(201,168,76,0.4);
+}
+
+.sidebar-item.active {
+  background: rgba(201,168,76,0.15);
+  border-left-color: var(--gold);
+}
+
+.sidebar-art {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--gold);
+  min-width: 36px;
+  margin-top: 2px;
+  background: rgba(201,168,76,0.1);
+  padding: 2px 5px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.sidebar-title {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.35;
+  font-weight: 300;
+}
+
+.sidebar-item.active .sidebar-title { color: #fff; font-weight: 400; }
+
+.sidebar-divider {
+  height: 1px;
+  background: rgba(201,168,76,0.15);
+  margin: 0.5rem 1rem;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+  max-width: 900px;
+}
+
+.main::-webkit-scrollbar { width: 6px; }
+.main::-webkit-scrollbar-thumb { background: var(--gold-dark); border-radius: 3px; }
+
+/* ===== CONTENT PAGES ===== */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ===== ARTIGO CARD ===== */
+.artigo-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--gold);
+  border-radius: 0 0 10px 10px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+.artigo-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.artigo-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+  min-width: 60px;
+}
+
+.artigo-meta { flex: 1; }
+
+.artigo-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 3px;
+}
+
+.artigo-rubrica {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  background: var(--amber-soft);
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.artigo-texto {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  background: var(--parchment);
+  border-left: 3px solid var(--gold);
+  padding: 1rem 1.25rem;
+  border-radius: 0 6px 6px 0;
+  line-height: 1.7;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+
+/* ===== TABS ===== */
+.tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--slate);
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tab-btn:hover { background: var(--parchment-dark); }
+.tab-btn.active {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* ===== TEORIA ===== */
+.teoria-bloco {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  color: #2A2A2A;
+  margin-bottom: 1rem;
+}
+
+.teoria-bloco p { margin-bottom: 0.75rem; }
+
+/* ===== ESQUEMA VISUAL ===== */
+.esquema {
+  background: var(--parchment);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.esquema-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.esquema-titulo::before {
+  content: '';
+  display: inline-block;
+  width: 3px;
+  height: 14px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+.esquema-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 8px;
+}
+
+.esquema-box {
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  border: 1px solid;
+}
+
+.esquema-box.navy {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+
+.esquema-box.gold {
+  background: var(--amber-soft);
+  color: var(--gold-dark);
+  border-color: rgba(201,168,76,0.4);
+}
+
+.esquema-box.crimson {
+  background: #FFF0F0;
+  color: var(--crimson);
+  border-color: rgba(139,26,26,0.25);
+}
+
+.esquema-box.mint {
+  background: var(--mint-light);
+  color: var(--mint);
+  border-color: rgba(26,92,74,0.25);
+}
+
+.esquema-box .box-label {
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  opacity: 0.7;
+}
+
+/* ===== EXEMPLO ===== */
+.exemplo-card {
+  border-left: 3px solid var(--mint);
+  background: var(--mint-light);
+  padding: 1rem 1.25rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 1rem;
+}
+
+.exemplo-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mint);
+  margin-bottom: 0.4rem;
+}
+
+.exemplo-card p { font-size: 0.88rem; line-height: 1.7; }
+
+/* ===== DICA / ALERTA ===== */
+.dica-card {
+  border-left: 3px solid var(--gold);
+  background: var(--amber-soft);
+  padding: 1rem 1.25rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 1rem;
+}
+
+.dica-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.4rem;
+}
+
+.alerta-card {
+  border-left: 3px solid var(--crimson);
+  background: #FFF5F5;
+  padding: 1rem 1.25rem;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 1rem;
+}
+
+.alerta-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--crimson);
+  margin-bottom: 0.4rem;
+}
+
+.dica-card p, .alerta-card p { font-size: 0.88rem; line-height: 1.7; }
+
+/* ===== MACETE ===== */
+.macete {
+  background: var(--navy);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.macete-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.macete-text {
+  color: rgba(255,255,255,0.9);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.macete-text strong { color: var(--gold-light); }
+
+/* ===== DOUTRINA ===== */
+.doutrina-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 2px;
+}
+
+.tag-majoritaria { background: #E8F5F0; color: var(--mint); border: 1px solid rgba(26,92,74,0.2); }
+.tag-majoritaria-2 { background: #EBF4FF; color: #1A4A8B; border: 1px solid rgba(26,74,139,0.2); }
+.tag-minoritaria { background: #FFF5F5; color: var(--crimson); border: 1px solid rgba(139,26,26,0.2); }
+
+/* ===== QUIZ ===== */
+.quiz-container { max-width: 720px; }
+
+.quiz-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.progress-bar-wrap {
+  flex: 1;
+  height: 6px;
+  background: var(--parchment-dark);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+.quiz-score-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: var(--navy);
+  background: var(--amber-soft);
+  padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+}
+
+.questao-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--navy);
+  border-radius: 0 0 10px 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.questao-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--gold-dark);
+  margin-bottom: 0.6rem;
+}
+
+.questao-texto {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  color: var(--navy);
+  font-weight: 400;
+}
+
+.opcoes { display: flex; flex-direction: column; gap: 8px; }
+
+.opcao-btn {
+  background: var(--parchment);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 14px;
+  text-align: left;
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.85rem;
+  color: var(--ink);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.opcao-btn:hover:not(:disabled) {
+  background: var(--parchment-dark);
+  border-color: var(--gold);
+}
+
+.opcao-btn.correta {
+  background: var(--mint-light);
+  border-color: var(--mint);
+  color: var(--mint);
+}
+
+.opcao-btn.errada {
+  background: #FFF0F0;
+  border-color: var(--crimson);
+  color: var(--crimson);
+}
+
+.opcao-letra {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  min-width: 20px;
+  padding-top: 1px;
+}
+
+.gabarito-box {
+  background: var(--parchment);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-top: 1rem;
+  display: none;
+  font-size: 0.85rem;
+  line-height: 1.65;
+}
+
+.gabarito-box.show { display: block; }
+.gabarito-titulo { font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+
+.quiz-btn {
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-family: 'Source Serif 4', serif;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+
+.quiz-btn:hover { background: var(--navy-light); }
+
+/* ===== RESULTADO QUIZ ===== */
+.resultado-container {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.resultado-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.resultado-msg {
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin-bottom: 1.5rem;
+}
+
+/* ===== HOME PAGE ===== */
+.home-hero {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+
+.home-hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.home-hero-sub {
+  font-size: 1rem;
+  color: var(--slate);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.home-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.home-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.home-card-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.home-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+}
+
+.home-card-desc { font-size: 0.78rem; color: var(--slate); line-height: 1.5; }
+
+.temas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px;
+  margin-bottom: 2rem;
+}
+
+.tema-pill {
+  background: var(--parchment-dark);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  color: var(--navy);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tema-pill:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+.tema-num { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--gold); }
+.tema-pill:hover .tema-num { color: var(--gold-light); }
+
+/* ===== SECTION HEADING ===== */
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-heading::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.section-sub {
+  font-size: 0.85rem;
+  color: var(--slate);
+  margin-bottom: 1.5rem;
+}
+
+/* ===== RESUMO PAGE ===== */
+.resumo-bloco {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.resumo-bloco h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.resumo-bloco ul {
+  list-style: none;
+  font-size: 0.85rem;
+  line-height: 2;
+  color: #2A2A2A;
+}
+
+.resumo-bloco ul li::before {
+  content: '→ ';
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .menu-toggle { display: flex; }
+  .header-nav { display: none; }
+  .sidebar {
+    position: fixed;
+    top: 64px;
+    left: 0;
+    height: calc(100vh - 64px);
+    z-index: 90;
+    transform: translateX(-100%);
+  }
+  .sidebar.open { transform: translateX(0); }
+  .main { padding: 1.25rem; }
+  .artigo-card { padding: 1.25rem; }
+  .artigo-num { font-size: 1.5rem; }
+  .home-hero-title { font-size: 1.6rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-brand">
+    <div class="brand-icon">§</div>
+    <div>
+      <div class="brand-text">Direito Penal</div>
+      <div class="brand-sub">Código Penal — Arts. 1º ao 31</div>
+    </div>
+  </div>
+  <div class="header-nav">
+    <button class="nav-btn active" onclick="showPage('home')">Início</button>
+    <button class="nav-btn" onclick="showPage('artigos')">Artigos</button>
+    <button class="nav-btn" onclick="showPage('resumo')">Resumo</button>
+    <button class="nav-btn" onclick="showPage('quiz')">Quiz</button>
+  </div>
+  <button class="menu-toggle" onclick="toggleSidebar()">☰</button>
+</header>
+
+<div class="app-body">
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-heading">Parte Geral — Título I</div>
+      <div class="sidebar-item active" onclick="goArtigo(1)">
+        <span class="sidebar-art">Art.1</span>
+        <span class="sidebar-title">Legalidade / Anterioridade</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(2)">
+        <span class="sidebar-art">Art.2</span>
+        <span class="sidebar-title">Lei penal no tempo</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(3)">
+        <span class="sidebar-art">Art.3</span>
+        <span class="sidebar-title">Lei excepcional / temporária</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(4)">
+        <span class="sidebar-art">Art.4</span>
+        <span class="sidebar-title">Tempo do crime</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(5)">
+        <span class="sidebar-art">Art.5</span>
+        <span class="sidebar-title">Territorialidade</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(6)">
+        <span class="sidebar-art">Art.6</span>
+        <span class="sidebar-title">Lugar do crime</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(7)">
+        <span class="sidebar-art">Art.7</span>
+        <span class="sidebar-title">Extraterritorialidade</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(8)">
+        <span class="sidebar-art">Art.8</span>
+        <span class="sidebar-title">Pena cumprida no estrangeiro</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(9)">
+        <span class="sidebar-art">Art.9</span>
+        <span class="sidebar-title">Eficácia de sentença estrangeira</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(10)">
+        <span class="sidebar-art">Art.10</span>
+        <span class="sidebar-title">Contagem de prazo</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(11)">
+        <span class="sidebar-art">Art.11</span>
+        <span class="sidebar-title">Frações não computáveis</span>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-heading">Título II — Crime</div>
+      <div class="sidebar-item" onclick="goArtigo(12)">
+        <span class="sidebar-art">Art.12</span>
+        <span class="sidebar-title">Regras gerais do CP</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(13)">
+        <span class="sidebar-art">Art.13</span>
+        <span class="sidebar-title">Relação de causalidade</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(14)">
+        <span class="sidebar-art">Art.14</span>
+        <span class="sidebar-title">Tentativa e consumação</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(15)">
+        <span class="sidebar-art">Art.15</span>
+        <span class="sidebar-title">Desistência voluntária</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(16)">
+        <span class="sidebar-art">Art.16</span>
+        <span class="sidebar-title">Arrependimento posterior</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(17)">
+        <span class="sidebar-art">Art.17</span>
+        <span class="sidebar-title">Crime impossível</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(18)">
+        <span class="sidebar-art">Art.18</span>
+        <span class="sidebar-title">Dolo e culpa</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(19)">
+        <span class="sidebar-art">Art.19</span>
+        <span class="sidebar-title">Resultado agravante</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(20)">
+        <span class="sidebar-art">Art.20</span>
+        <span class="sidebar-title">Erro de tipo</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(21)">
+        <span class="sidebar-art">Art.21</span>
+        <span class="sidebar-title">Erro sobre ilicitude</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(22)">
+        <span class="sidebar-art">Art.22</span>
+        <span class="sidebar-title">Coação irresistível</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(23)">
+        <span class="sidebar-art">Art.23</span>
+        <span class="sidebar-title">Excludentes de ilicitude</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(24)">
+        <span class="sidebar-art">Art.24</span>
+        <span class="sidebar-title">Estado de necessidade</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(25)">
+        <span class="sidebar-art">Art.25</span>
+        <span class="sidebar-title">Legítima defesa</span>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-heading">Título III — Imputabilidade</div>
+      <div class="sidebar-item" onclick="goArtigo(26)">
+        <span class="sidebar-art">Art.26</span>
+        <span class="sidebar-title">Inimputabilidade</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(27)">
+        <span class="sidebar-art">Art.27</span>
+        <span class="sidebar-title">Menores de 18 anos</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(28)">
+        <span class="sidebar-art">Art.28</span>
+        <span class="sidebar-title">Embriaguez</span>
+      </div>
+      <div class="sidebar-divider"></div>
+      <div class="sidebar-heading">Título IV — Concurso de pessoas</div>
+      <div class="sidebar-item" onclick="goArtigo(29)">
+        <span class="sidebar-art">Art.29</span>
+        <span class="sidebar-title">Concurso de agentes</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(30)">
+        <span class="sidebar-art">Art.30</span>
+        <span class="sidebar-title">Circunstâncias comunicáveis</span>
+      </div>
+      <div class="sidebar-item" onclick="goArtigo(31)">
+        <span class="sidebar-art">Art.31</span>
+        <span class="sidebar-title">Ajuste e cumplicidade</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main" id="main-content">
+
+    <!-- HOME PAGE -->
+    <div class="page active" id="page-home">
+      <div class="home-hero">
+        <div class="home-hero-title">Código Penal Brasileiro</div>
+        <div class="home-hero-sub">Estudo completo dos artigos 1º ao 31 — teoria, doutrina, jurisprudência e macetes para concursos e provas.</div>
+      </div>
+
+      <div class="home-grid">
+        <div class="home-card" onclick="showPage('artigos'); goArtigo(1)">
+          <div class="home-card-icon">📜</div>
+          <div class="home-card-title">Artigos</div>
+          <div class="home-card-desc">Texto legal com teoria, exemplos e esquemas</div>
+        </div>
+        <div class="home-card" onclick="showPage('resumo')">
+          <div class="home-card-icon">📋</div>
+          <div class="home-card-title">Resumo</div>
+          <div class="home-card-desc">Síntese dos principais institutos</div>
+        </div>
+        <div class="home-card" onclick="showPage('quiz')">
+          <div class="home-card-icon">🎯</div>
+          <div class="home-card-title">Quiz</div>
+          <div class="home-card-desc">Questões estilo OAB e concursos</div>
+        </div>
+      </div>
+
+      <div class="section-heading">Navegar por Tema</div>
+      <div class="temas-grid">
+        <div class="tema-pill" onclick="showPage('artigos'); goArtigo(1)"><span class="tema-num">1</span> Legalidade</div>
+        <div class="tema-pill" onclick="showPage('artigos'); goArtigo(2)"><span class="tema-num">2</span> Lei Penal no Tempo</div>
+        <div class="tema-pill" onclick="showPage('artigos'); goArtigo(4)"><span class="tema-num">4</span> Tempo do Crime</div>
+        <div class="tema-pill" onclick="showPage('artigos'); goArtigo(5)"><span class="tema-num">5</span> Territorialidade</div>
+        <div class="tema-pill" onclick="showPage('artigos'); goArtigo(13)"><span class="tema-num">13</span> Nexo Causal</div>
+        <div class="tema-pill" onclick="showPage('artigos'); goArtigo(14)"><span class="tema-num">14</span> Tentativa</div>
+        <div class="tema-pill" onclick="showPage('artigos'); goArtigo(18)"><span class="tema-num">18</span> Dolo e Culpa</div>
+        <div class="tema-pill" onclick="showPage('artigos'); goArtigo(20)"><span class="tema-num">20</span> Erro de Tipo</div>
+        <div class="tema-pill" onclick="showPage('artigos'); goArtigo(23)"><span class="tema-num">23</span> Excludentes</div>
+        <div class="tema-pill" onclick="showPage('artigos'); goArtigo(25)"><span class="tema-num">25</span> Legítima Defesa</div>
+        <div class="tema-pill" onclick="showPage('artigos'); goArtigo(26)"><span class="tema-num">26</span> Inimputabilidade</div>
+        <div class="tema-pill" onclick="showPage('artigos'); goArtigo(29)"><span class="tema-num">29</span> Concurso de Pessoas</div>
+      </div>
+    </div>
+
+    <!-- ARTIGOS PAGE -->
+    <div class="page" id="page-artigos">
+      <div id="artigo-content"></div>
+    </div>
+
+    <!-- RESUMO PAGE -->
+    <div class="page" id="page-resumo">
+      <div class="section-heading">Resumo Geral</div>
+      <div class="section-sub">Síntese dos institutos fundamentais da Parte Geral do Código Penal</div>
+
+      <div class="resumo-bloco">
+        <h3>⚖️ Princípio da Legalidade (Art. 1º)</h3>
+        <ul>
+          <li><strong>Nullum crimen, nulla poena sine lege</strong> — sem lei prévia não há crime nem pena</li>
+          <li>Lei deve ser: <strong>escrita</strong> (lex scripta), <strong>anterior</strong> (lex praevia), <strong>estrita</strong> (lex stricta), <strong>certa</strong> (lex certa)</li>
+          <li>Proíbe analogia <em>in malam partem</em>; permite analogia <em>in bonam partem</em></li>
+          <li>Fundamento constitucional: CF/88, art. 5º, XXXIX</li>
+        </ul>
+      </div>
+
+      <div class="resumo-bloco">
+        <h3>⏳ Lei Penal no Tempo (Art. 2º)</h3>
+        <ul>
+          <li><strong>Regra geral:</strong> irretroatividade da lei penal mais grave</li>
+          <li><strong>Exceção:</strong> retroatividade da lei mais benéfica (abolitio criminis ou novatio legis in mellius)</li>
+          <li>Abolitio criminis: extinção do crime, extingue punibilidade mesmo após trânsito em julgado</li>
+          <li>Novatio legis in pejus: não retroage; aplica-se ao fato antigo a lei mais benigna</li>
+          <li>Lei temporária e excepcional: ultra-atividade (art. 3º)</li>
+        </ul>
+      </div>
+
+      <div class="resumo-bloco">
+        <h3>📍 Lei Penal no Espaço (Arts. 5º–7º)</h3>
+        <ul>
+          <li><strong>Princípio da territorialidade temperada:</strong> aplica-se a lei brasileira nos crimes cometidos no território nacional</li>
+          <li>Território por extensão: aeronaves e embarcações brasileiras, públicas ou a serviço do governo</li>
+          <li>Extraterritorialidade incondicionada: crimes contra a vida ou liberdade do Presidente da República</li>
+          <li>Extraterritorialidade condicionada: entrada no Brasil, não extradição, requisição do MJ, etc.</li>
+          <li>Teoria da ubiquidade (art. 6º): lugar do crime = onde ocorreu a ação/omissão OU onde se produziu/deveria se produzir o resultado</li>
+        </ul>
+      </div>
+
+      <div class="resumo-bloco">
+        <h3>🔗 Nexo Causal (Art. 13)</h3>
+        <ul>
+          <li>Teoria da equivalência dos antecedentes causais (<em>conditio sine qua non</em>)</li>
+          <li>Superveniência de causa relativamente independente: rompe o nexo se por si só produziu o resultado</li>
+          <li>Causa absolutamente independente: sempre rompe o nexo causal</li>
+          <li>Imputação objetiva: critério doutrinário complementar — criação e realização de risco não permitido</li>
+        </ul>
+      </div>
+
+      <div class="resumo-bloco">
+        <h3>🎯 Tentativa e Consumação (Art. 14)</h3>
+        <ul>
+          <li>Crime consumado: todos os elementos do tipo se realizam</li>
+          <li>Crime tentado: início da execução, não consumado por circunstâncias alheias à vontade do agente</li>
+          <li>Redução da pena na tentativa: 1/3 a 2/3 (quanto mais próximo da consumação, menor a redução)</li>
+          <li>Crimes que não admitem tentativa: culposos, preterdolosos, omissivos próprios, contravenções, habituais, unissubsistentes</li>
+        </ul>
+      </div>
+
+      <div class="resumo-bloco">
+        <h3>💡 Dolo e Culpa (Art. 18)</h3>
+        <ul>
+          <li><strong>Dolo direto:</strong> quer o resultado (1º grau) ou assume o risco de produzi-lo (2º grau/eventual)</li>
+          <li><strong>Culpa:</strong> imprudência, negligência, imperícia — resultado previsto mas não querido, ou imprevisível</li>
+          <li>Crime culposo só é punível quando expressamente previsto em lei</li>
+          <li>Dolo eventual ≠ culpa consciente: diferença está na aceitação ou rejeição do resultado</li>
+        </ul>
+      </div>
+
+      <div class="resumo-bloco">
+        <h3>❌ Excludentes de Ilicitude (Art. 23)</h3>
+        <ul>
+          <li>Estado de necessidade: sacrifício de bem jurídico para salvar outro de maior ou igual valor</li>
+          <li>Legítima defesa: repelir agressão injusta, atual ou iminente, com meios necessários e moderados</li>
+          <li>Estrito cumprimento do dever legal: agente público em exercício regular de sua função</li>
+          <li>Exercício regular de direito: médico, advogado, professor de artes marciais, etc.</li>
+          <li>Excesso punível: doloso ou culposo</li>
+        </ul>
+      </div>
+
+      <div class="resumo-bloco">
+        <h3>🧠 Imputabilidade (Arts. 26–28)</h3>
+        <ul>
+          <li>Inimputável: doença mental ou desenvolvimento mental incompleto/retardado (art. 26 caput) → medida de segurança</li>
+          <li>Semi-imputável: perturbação da saúde mental → pena reduzida de 1/3 a 2/3 OU medida de segurança</li>
+          <li>Menor de 18 anos: inimputável por presunção absoluta → sujeito ao ECA</li>
+          <li>Embriaguez voluntária/culposa: não exclui imputabilidade (teoria da actio libera in causa)</li>
+          <li>Embriaguez involuntária completa: exclui imputabilidade</li>
+        </ul>
+      </div>
+
+      <div class="resumo-bloco">
+        <h3>👥 Concurso de Pessoas (Arts. 29–31)</h3>
+        <ul>
+          <li>Teoria monista/unitária: todos os coautores e partícipes respondem pelo mesmo crime</li>
+          <li>Participação de menor importância: redução de pena de 1/6 a 1/3</li>
+          <li>Cooperação dolosamente distinta: quem queria crime menos grave responde por ele</li>
+          <li>Circunstâncias pessoais não comunicáveis; circunstâncias objetivas comunicáveis se o coautor as conhecia</li>
+          <li>Ajuste, determinação ou instigação do crime não executado: impunidade (regra geral)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- QUIZ PAGE -->
+    <div class="page" id="page-quiz">
+      <div class="section-heading">Quiz de Fixação</div>
+      <div class="section-sub">Questões estilo OAB, concursos públicos e provas acadêmicas</div>
+      <div class="quiz-container" id="quiz-area"></div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+const ARTIGOS = {
+  1: {
+    titulo: "Anterioridade da Lei",
+    rubrica: "Princípio da Legalidade",
+    texto: `Art. 1º - Não há crime sem lei anterior que o defina. Não há pena sem prévia cominação legal.`,
+    teoria: `<p>O <strong>Princípio da Legalidade</strong> (ou Princípio da Reserva Legal) é a pedra angular do Direito Penal moderno e democrático. Consagrado também no art. 5º, XXXIX da Constituição Federal, estabelece que <strong>ninguém pode ser punido por conduta que, ao tempo de sua prática, não estava prevista em lei como crime</strong>.</p>
+    <p>A doutrina desdobra o princípio em quatro garantias: <strong>(1) lex scripta</strong> — a lei penal deve ser escrita, vedando-se o costume incriminador; <strong>(2) lex praevia</strong> — a lei deve ser anterior ao fato (anterioridade); <strong>(3) lex stricta</strong> — proibição de analogia prejudicial ao réu; <strong>(4) lex certa</strong> — a lei deve ser precisa e determinada, vedando tipos penais vagos.</p>
+    <p>A <strong>analogia</strong> só é permitida <em>in bonam partem</em> (em benefício do réu). É vedado criar crimes por analogia <em>in malam partem</em>.</p>`,
+    esquema: {
+      titulo: "Desdobramentos do Princípio da Legalidade",
+      boxes: [
+        {cor:"navy", label:"Lex Scripta", texto:"Lei deve ser escrita — costume não cria crime"},
+        {cor:"gold", label:"Lex Praevia", texto:"Lei deve ser anterior ao fato — anterioridade"},
+        {cor:"mint", label:"Lex Stricta", texto:"Vedada analogia in malam partem"},
+        {cor:"crimson", label:"Lex Certa", texto:"Tipo penal deve ser claro e determinado"},
+      ]
+    },
+    exemplo: `João pratica uma conduta que todos consideram moralmente reprovável, mas que não está descrita em nenhuma lei penal vigente. Com base no art. 1º do CP, João <strong>não pode ser preso nem condenado</strong>, pois não há crime sem lei anterior que o defina — independentemente da reprovabilidade moral da conduta.`,
+    dica: `O princípio da legalidade é diferente do <em>princípio da reserva legal</em>. Para parte da doutrina, legalidade é gênero (engloba lei em sentido amplo) e reserva legal é espécie (exige lei em sentido estrito, ou seja, aprovada pelo Legislativo). Em Direito Penal, por força do art. 5º, XXXIX CF, exige-se sempre <strong>lei formal (reserva legal estrita)</strong> — medida provisória não pode criar crimes.`,
+    macete: `<strong>LEGALIDADE = 4 L's:</strong> Lei Escrita + Lei Prévia + Lei Estrita + Lei Certa`,
+    doutrina: `Majoritária: aceita a distinção entre legalidade formal (lei votada pelo Congresso) e material (vedação de tipos vagos). STF já declarou inconstitucional norma penal que não descreve com precisão o comportamento proibido.`
+  },
+  2: {
+    titulo: "Lei Penal no Tempo",
+    rubrica: "Retroatividade Benéfica",
+    texto: `Art. 2º - Ninguém pode ser punido por fato que lei posterior deixa de considerar crime, cessando em virtude dela a execução e os efeitos penais da sentença condenatória.
+Parágrafo único - A lei posterior, que de qualquer modo favorecer o agente, aplica-se aos fatos anteriores, ainda que decididos por sentença condenatória transitada em julgado.`,
+    teoria: `<p>O art. 2º trata da <strong>sucessão de leis penais no tempo</strong>. A regra é a <strong>irretroatividade da lei penal mais severa</strong> e a <strong>retroatividade da lei mais benéfica</strong>.</p>
+    <p><strong>Abolitio criminis</strong>: quando lei nova deixa de considerar crime determinada conduta, extingue a punibilidade imediatamente — mesmo que já haja sentença condenatória transitada em julgado. Os efeitos penais cessam (não cumpre mais pena, não há mais reincidência), mas os efeitos civis podem subsistir (obrigação de reparar o dano).</p>
+    <p><strong>Novatio legis in mellius</strong>: lei nova que de algum modo beneficia o agente, sem abolir o crime. Retroage a fatos passados.</p>
+    <p><strong>Novatio legis in pejus</strong>: lei nova que agrava a situação do agente. <strong>Não retroage</strong>.</p>`,
+    esquema: {
+      titulo: "Espécies de Conflito de Leis Penais no Tempo",
+      boxes: [
+        {cor:"crimson", label:"Novatio legis in pejus", texto:"Lei nova mais severa — NÃO retroage"},
+        {cor:"mint", label:"Abolitio criminis", texto:"Lei nova abole o crime — retroage, extingue punibilidade"},
+        {cor:"mint", label:"Novatio legis in mellius", texto:"Lei nova mais benéfica — retroage"},
+        {cor:"gold", label:"Lei intermediária", texto:"Mais benéfica que as duas — pode ser aplicada"},
+      ]
+    },
+    exemplo: `Em 2010, Carlos foi condenado por porte de drogas para uso pessoal com pena de 2 anos. Em 2020, lei nova descriminaliza o porte para uso. Pela <em>abolitio criminis</em>, Carlos deve ser libertado se ainda cumpre pena, e o registro da condenação anterior <strong>não pode ser usado para configurar reincidência</strong> em crimes futuros.`,
+    dica: `Atenção: a lei que <strong>cria nova causa de extinção da punibilidade</strong> é também considerada mais benéfica e deve retroagir. Exemplo: nova lei que reduz prazo prescricional.`,
+    macete: `<strong>"Beneficia sempre, prejudica nunca retroativamente"</strong>. Se a lei nova é boa para o réu → retroage. Se é ruim → não retroage.`,
+    doutrina: `Majorítária: na dúvida sobre qual lei é mais benéfica, deve-se verificar em concreto qual produz resultado menos gravoso para o réu — e não abstratamente. O STF permite ao próprio juízo da execução aplicar a lei nova mais benéfica (Súmula 611).`
+  },
+  3: {
+    titulo: "Lei Excepcional ou Temporária",
+    rubrica: "Ultra-atividade",
+    texto: `Art. 3º - A lei excepcional ou temporária, embora decorrido o período de sua duração ou cessadas as circunstâncias que a determinaram, aplica-se ao fato praticado durante sua vigência.`,
+    teoria: `<p>Leis <strong>temporárias</strong> são aquelas que fixam prazo expresso de vigência. Leis <strong>excepcionais</strong> destinam-se a viger durante situações anormais (guerra, epidemia, calamidade). Ambas possuem <strong>ultra-atividade</strong>: continuam a reger os fatos praticados durante sua vigência mesmo após sua revogação.</p>
+    <p>Sem a ultra-atividade, o agente poderia aguardar o término da lei para escapar da punição, o que tornaria essas normas ineficazes.</p>`,
+    esquema: {
+      titulo: "Ultra-atividade das Leis Temporárias e Excepcionais",
+      boxes: [
+        {cor:"gold", label:"Lei Temporária", texto:"Prazo fixo — vige até data determinada"},
+        {cor:"gold", label:"Lei Excepcional", texto:"Vige enquanto durar a situação de emergência"},
+        {cor:"navy", label:"Ultra-atividade", texto:"Após revogação, aplica-se a fatos praticados durante a vigência"},
+      ]
+    },
+    exemplo: `Durante a pandemia de COVID-19, suponha que lei excepcional estabeleça crime específico de burlar quarentena. Mesmo após o fim da pandemia e revogação da lei, quem burlou a quarentena naquele período ainda pode ser processado e condenado.`,
+    dica: `A ultra-atividade das leis temporárias e excepcionais <strong>não viola o art. 2º</strong> (retroatividade benéfica), pois a lei posterior que as revoga não é "mais benéfica" — apenas cessa a situação de emergência. Essa é a posição majoritária e do STF.`,
+    macete: `<strong>Temporária/Excepcional = Ultra-ativa</strong> (continua valendo para o passado mesmo depois de morta).`,
+    doutrina: `Rogério Greco e Cleber Masson sustentam que a ultra-atividade é necessária para a efetividade dessas normas. Posição minoritária (Frederico Marques) considera que a revogação seria uma forma de abolitio, mas essa visão é rejeitada majoritariamente.`
+  },
+  4: {
+    titulo: "Tempo do Crime",
+    rubrica: "Teoria da Atividade",
+    texto: `Art. 4º - Considera-se praticado o crime no momento da ação ou omissão, ainda que outro seja o momento do resultado.`,
+    teoria: `<p>Existem três teorias sobre o tempo do crime: <strong>(1) Teoria da Atividade</strong> (adotada pelo CP): o crime ocorre no momento da ação ou omissão; <strong>(2) Teoria do Resultado</strong>: considera-se praticado quando ocorre o resultado; <strong>(3) Teoria Mista ou da Ubiquidade</strong>: ação/omissão ou resultado.</p>
+    <p>A teoria da atividade é relevante para determinar: <strong>a lei penal aplicável</strong> (lei vigente ao tempo da ação), <strong>a imputabilidade penal</strong> do agente (examina-se se era imputável no momento da conduta, não do resultado), e a <strong>prescrição retroativa</strong>.</p>`,
+    esquema: {
+      titulo: "Teoria Adotada pelo CP",
+      boxes: [
+        {cor:"mint", label:"Tempo do Crime (Art. 4)", texto:"Momento da AÇÃO ou OMISSÃO"},
+        {cor:"gold", label:"Lugar do Crime (Art. 6)", texto:"UBIQUIDADE — ação/omissão OU resultado"},
+      ]
+    },
+    exemplo: `Tício, com 17 anos e 11 meses, efetua disparo de arma de fogo que atinge a vítima. A vítima morre 2 meses depois, quando Tício já tinha 18 anos. Pelo art. 4º (teoria da atividade), o crime foi praticado quando Tício ainda era <strong>menor de 18 anos</strong> — portanto, inimputável pelo CP, respondendo pelo ECA.`,
+    dica: `<strong>Macete fundamental:</strong> Tempo do crime = Teoria da Atividade (A). Lugar do crime = Teoria da Ubiquidade (U). Memorize: "T-A, L-U" (Tempo-Atividade, Lugar-Ubiquidade).`,
+    macete: `<strong>T.A.L.U.:</strong> Tempo → Atividade | Lugar → Ubiquidade`,
+    doutrina: `A teoria da atividade facilita a determinação da imputabilidade e da lei aplicável no momento em que o agente poderia ter influência sobre sua conduta.`
+  },
+  5: {
+    titulo: "Territorialidade",
+    rubrica: "Aplicação da Lei Brasileira",
+    texto: `Art. 5º - Aplica-se a lei brasileira, sem prejuízo de convenções, tratados e regras de direito internacional, ao crime cometido no território nacional.
+§ 1º - Para os efeitos penais, consideram-se como extensão do território nacional as embarcações e aeronaves brasileiras, de natureza pública ou a serviço do governo brasileiro onde quer que se encontrem, bem como as aeronaves e as embarcações brasileiras, mercantes ou de propriedade privada, que se achem, respectivamente, no espaço aéreo correspondente ou em alto-mar.
+§ 2º - É também aplicável a lei brasileira aos crimes praticados a bordo de aeronaves ou embarcações estrangeiras de propriedade privada, achando-se aquelas em pouso no território nacional ou em vôo no espaço aéreo correspondente, e estas em porto ou mar territorial do Brasil.`,
+    teoria: `<p>O Brasil adota o <strong>princípio da territorialidade temperada</strong>: aplica-se a lei brasileira aos crimes cometidos no território nacional, mas com exceções decorrentes de convenções e tratados internacionais (ex: imunidade diplomática).</p>
+    <p>O <strong>território nacional</strong> abrange o espaço terrestre, hídrico e aéreo, incluindo extensões legais previstas nos §§ 1º e 2º.</p>`,
+    esquema: {
+      titulo: "Extensão do Território Nacional",
+      boxes: [
+        {cor:"navy", label:"Embarcações/Aeronaves Públicas Brasileiras", texto:"Sempre território nacional, onde quer que estejam"},
+        {cor:"gold", label:"Embarcações/Aeronaves Privadas Brasileiras", texto:"Em alto-mar ou espaço aéreo correspondente"},
+        {cor:"mint", label:"Embarcações/Aeronaves Estrangeiras Privadas", texto:"Em porto, mar territorial ou espaço aéreo do Brasil"},
+      ]
+    },
+    exemplo: `Um crime praticado a bordo de um navio de guerra brasileiro no porto de Lisboa (Portugal) está sujeito à lei penal brasileira, pois navio público brasileiro é extensão do território nacional.`,
+    dica: `Imunidade diplomática não é causa de exclusão da tipicidade — o crime existe, mas o agente é imune à jurisdição brasileira. O STF pode renunciar à imunidade pelo Brasil, mas não pelo Estado acreditante.`,
+    macete: `<strong>Público brasileiro = sempre Brasil. Privado = depende de onde está.</strong>`,
+    doutrina: `A territorialidade temperada foi adotada para compatibilizar a soberania nacional com os compromissos internacionais. A imunidade diplomática é reconhecida como limitação convencional.`
+  },
+  6: {
+    titulo: "Lugar do Crime",
+    rubrica: "Teoria da Ubiquidade",
+    texto: `Art. 6º - Considera-se praticado o crime no lugar em que ocorreu a ação ou omissão, no todo ou em parte, bem como onde se produziu ou deveria produzir-se o resultado.`,
+    teoria: `<p>Para o <strong>lugar do crime</strong>, o CP adota a <strong>Teoria da Ubiquidade</strong> (ou mista): o crime considera-se praticado tanto no lugar da ação/omissão quanto no lugar onde se produziu (ou deveria se produzir) o resultado.</p>
+    <p>Isso tem especial relevância nos <strong>crimes à distância</strong> (delicta distantia), onde ação e resultado ocorrem em países diferentes. Nesse caso, qualquer dos países pode reivindicar jurisdição.</p>`,
+    esquema: {
+      titulo: "Teoria da Ubiquidade — Crime à Distância",
+      boxes: [
+        {cor:"gold", label:"Lugar da Ação", texto:"País A: onde o agente praticou o ato"},
+        {cor:"navy", label:"OU", texto:"A lei brasileira se aplica em qualquer dos dois"},
+        {cor:"gold", label:"Lugar do Resultado", texto:"País B: onde a vítima foi atingida"},
+      ]
+    },
+    exemplo: `João, no Brasil, envia bomba pelo correio para matar vítima na Argentina. A vítima morre na Argentina. Pelo art. 6º (ubiquidade), o crime foi praticado no Brasil (lugar da ação) <strong>e</strong> na Argentina (lugar do resultado). A lei penal brasileira é aplicável.`,
+    dica: `Não confundir com competência processual interna. Para definir competência entre Comarcas dentro do Brasil, o CPP adota o <strong>lugar do resultado</strong> (art. 70 CPP). Para competência internacional, o CP usa ubiquidade (art. 6º).`,
+    macete: `<strong>TALU</strong> (Tempo-Atividade / Lugar-Ubiquidade) — palavra-chave para provas!`,
+    doutrina: `A ubiquidade evita a impunidade em crimes transnacionais, permitindo que o Estado brasileiro julgue o caso mesmo que parte do iter criminis tenha ocorrido fora do território nacional.`
+  },
+  7: {
+    titulo: "Extraterritorialidade",
+    rubrica: "Aplicação da Lei Brasileira no Exterior",
+    texto: `Art. 7º - Ficam sujeitos à lei brasileira, embora cometidos no estrangeiro:
+I - os crimes: a) contra a vida ou a liberdade do Presidente da República; b) contra o patrimônio ou a fé pública da União, do DF, de Estado, Território, Município, empresa pública, sociedade de economia mista, autarquia ou fundação; c) contra a administração pública, por quem está a seu serviço; d) de genocídio, quando o agente for brasileiro ou domiciliado no Brasil;
+II - os crimes: a) que, por tratado ou convenção, o Brasil se obrigou a reprimir; b) praticados por brasileiro; c) praticados em aeronaves ou embarcações brasileiras, mercantes ou de propriedade privada, quando em território estrangeiro e aí não sejam julgados.
+§ 1º - Nos casos do inciso I, o agente é punido segundo a lei brasileira, ainda que absolvido ou condenado no estrangeiro.
+§ 2º - Nos casos do inciso II, a aplicação da lei brasileira depende do concurso das seguintes condições: [...]`,
+    teoria: `<p>A extraterritorialidade aplica a lei brasileira a crimes cometidos fora do Brasil. Divide-se em:</p>
+    <p><strong>Incondicionada (inciso I)</strong>: aplica-se a lei brasileira independentemente de qualquer condição — mesmo que o agente tenha sido absolvido ou condenado no exterior (princípio do ne bis in idem mitigado).</p>
+    <p><strong>Condicionada (inciso II)</strong>: exige condições cumulativas: entrada do agente no Brasil, não extradição, tratado ou exigência do Estado estrangeiro (dupla tipicidade), não ter sido absolvido ou cumprido pena no exterior.</p>`,
+    esquema: {
+      titulo: "Extraterritorialidade",
+      boxes: [
+        {cor:"crimson", label:"Incondicionada (Inc. I)", texto:"Crimes contra Presidente, patrimônio público, genocídio — aplica-se sempre"},
+        {cor:"gold", label:"Condicionada (Inc. II)", texto:"Tratados, crimes de brasileiro, aeronaves — exige condições cumulativas"},
+      ]
+    },
+    exemplo: `Brasileiro pratica homicídio no exterior e retorna ao Brasil, tendo sido absolvido no país estrangeiro. Se for caso de extraterritorialidade condicionada, poderá ser julgado no Brasil, desde que cumpridas as condições do § 2º. Se o Brasil o julgou, pode deduzir da pena o tempo já cumprido no exterior (art. 8º).`,
+    dica: `A extraterritorialidade incondicionada admite dupla punição (ne bis in idem mitigado): se o agente já foi punido no exterior, a pena lá cumprida é apenas <strong>atenuante ou computada na pena</strong> (art. 8º).`,
+    macete: `<strong>Inc. I = INCONDICIONADA (letras IMPORTANTES: Presidente, Patrimônio Público, Genocídio). Inc. II = condicionada.</strong>`,
+    doutrina: `O princípio da proteção (inc. I) justifica a extraterritorialidade incondicionada. O princípio da personalidade ativa (inc. II, b) justifica punir o brasileiro que delinquiu no exterior.`
+  },
+  8: {
+    titulo: "Pena Cumprida no Estrangeiro",
+    rubrica: "Detração Internacional",
+    texto: `Art. 8º - A pena cumprida no estrangeiro atenua a pena imposta no Brasil pelo mesmo crime, quando diversas, ou nela é computada, quando idênticas.`,
+    teoria: `<p>O art. 8º consagra a <strong>detração internacional</strong>, que mitiga os efeitos do ne bis in idem nos casos de extraterritorialidade. Se o agente já foi condenado no exterior pelo mesmo crime, a pena lá cumprida deve ser <strong>computada</strong> (se a pena for idêntica) ou <strong>atenuada</strong> (se for de natureza diversa) na pena aplicada no Brasil.</p>`,
+    exemplo: `João pratica crime de corrupção de funcionário público no exterior, é condenado a 2 anos lá e já os cumpriu. No Brasil, condenado a 4 anos pelo mesmo fato, os 2 anos já cumpridos são descontados — cumprirá apenas 2 anos no Brasil.`,
+    dica: `Esse artigo é aplicação do princípio da proporcionalidade: evita que o Estado puna além do necessário.`,
+    macete: `<strong>Pena idêntica = computa (desconta). Pena diversa = atenua (reduz).</strong>`,
+    doutrina: `Cleber Masson destaca que o art. 8º é corolário do princípio da humanidade da pena, impedindo punição desproporcional quando o agente já sofreu consequências pelo mesmo fato.`
+  },
+  9: {
+    titulo: "Eficácia de Sentença Estrangeira",
+    rubrica: "Reconhecimento no Brasil",
+    texto: `Art. 9º - A sentença estrangeira, quando a aplicação da lei brasileira produz na espécie as mesmas consequências, pode ser homologada no Brasil para: I - obrigar o condenado à reparação do dano, a restituições e a outros efeitos civis; II - sujeitá-lo a medida de segurança.
+Parágrafo único - A homologação depende: a) para os efeitos previstos no inciso I, de pedido da parte interessada; b) para os outros efeitos, da existência de tratado de extradição com o país de cuja autoridade judiciária emanou a sentença, ou, na falta de tratado, de requisição do Ministro da Justiça.`,
+    teoria: `<p>A sentença penal estrangeira não é automaticamente eficaz no Brasil — precisa de <strong>homologação pelo STJ</strong> (EC 45/2004). Os efeitos se limitam a: reparação de dano/efeitos civis e medida de segurança.</p>
+    <p>Não é possível homologar sentença estrangeira para fins de <strong>cumprimento de pena privativa de liberdade</strong> no Brasil.</p>`,
+    dica: `A competência para homologar sentença estrangeira é do <strong>STJ</strong> (não mais do STF, conforme EC 45/2004).`,
+    macete: `<strong>Sentença estrangeira → STJ homologa → apenas efeitos CIVIS ou MEDIDA DE SEGURANÇA.</strong>`,
+    doutrina: `A limitação dos efeitos da sentença estrangeira resguarda a soberania nacional, ao mesmo tempo em que facilita a cooperação jurídica internacional em matéria penal.`
+  },
+  10: {
+    titulo: "Contagem do Prazo",
+    rubrica: "Cômputo dos Prazos Penais",
+    texto: `Art. 10 - O dia do começo inclui-se no cômputo do prazo. Contam-se os dias, os meses e os anos pelo calendário comum.`,
+    teoria: `<p>No Direito Penal, o prazo é computado de forma diferente do Direito Processual Civil: <strong>inclui-se o dia do começo</strong> (dies a quo). Assim, se alguém é preso no dia 1º de janeiro e tem prisão decretada por 10 dias, será solto no dia 10 de janeiro.</p>
+    <p>Os prazos se contam pelo calendário comum, sem importar se há feriados ou finais de semana. O prazo penal não se prorroga por domingo ou feriado (diferente do prazo processual).</p>`,
+    esquema: {
+      titulo: "Contagem de Prazo Penal vs. Processual",
+      boxes: [
+        {cor:"mint", label:"Prazo Penal (Art. 10)", texto:"Inclui o dia do início — conta dias corridos"},
+        {cor:"crimson", label:"Prazo Processual Penal", texto:"Exclui o dia do início — começa no dia seguinte"},
+      ]
+    },
+    exemplo: `Condenado a 1 ano de reclusão, começa a cumprir pena no dia 10/01/2024. O prazo inclui o dia do começo, portanto o término se dá em 09/01/2025 (1 ano contado a partir do dia 10/01/2024, com o dia 10 incluído).`,
+    dica: `<strong>Atenção ao dia do começo:</strong> prazo penal (substantivo) inclui o dia do início; prazo processual penal exclui. É fonte clássica de erro em provas!`,
+    macete: `<strong>"Penal = come o primeiro dia. Processual = começa no dia seguinte."</strong>`,
+    doutrina: `A inclusão do dies a quo no Direito Penal aplica-se especialmente à contagem de pena, prescrição, período de prova no sursis, e outros institutos de direito material.`
+  },
+  11: {
+    titulo: "Frações Não Computáveis da Pena",
+    rubrica: "Arredondamento de Pena",
+    texto: `Art. 11 - Desprezam-se, nas penas privativas de liberdade e nas restritivas de direitos, as frações de dia, e, na pena de multa, as frações de cruzeiro.`,
+    teoria: `<p>O art. 11 estabelece que frações de dia não são computadas nas penas privativas de liberdade e restritivas de direitos. Assim, se o cálculo da pena resultar, por exemplo, em 1 ano, 3 meses e 15,4 dias, despreza-se a fração ".4", cumprindo-se apenas 1 ano, 3 meses e 15 dias.</p>`,
+    dica: `Esse artigo beneficia o réu: a fração de dia é descartada (nunca arredondada para cima). É expressão do princípio da <em>favor rei</em>.`,
+    macete: `<strong>Fração de dia = zero. Sempre arredonda para baixo em benefício do réu.</strong>`,
+    doutrina: `Aplicação do princípio in dubio pro reo e favor libertatis: quando há dúvida ou fração, resolve-se em favor do condenado.`
+  },
+  12: {
+    titulo: "Regras Gerais do Código Penal",
+    rubrica: "Aplicação Subsidiária",
+    texto: `Art. 12 - As regras gerais deste Código aplicam-se aos fatos incriminados por lei especial, se esta não dispuser de modo diverso.`,
+    teoria: `<p>O art. 12 estabelece a <strong>aplicação subsidiária</strong> da Parte Geral do CP a toda a legislação penal especial. Isso significa que as regras sobre tentativa, concurso de crimes, imputabilidade, causas de exclusão da ilicitude etc., previstas nos arts. 1º ao 120 do CP, se aplicam também a crimes previstos em leis especiais (Lei de Drogas, Estatuto do Desarmamento, Crimes de Trânsito etc.).</p>
+    <p>A ressalva "se esta não dispuser de modo diverso" permite que a lei especial afaste a aplicação da regra geral. <em>Lex specialis derogat legi generali</em>.</p>`,
+    exemplo: `A Lei de Drogas (Lei 11.343/2006) traz regras específicas sobre penas. Para tudo o que ela não disciplina (ex: tentativa, concurso de pessoas, inimputabilidade), aplicam-se as regras gerais do CP.`,
+    dica: `Exemplos de leis especiais que afastam regras gerais do CP: Código Penal Militar tem regras próprias sobre tentativa; a Lei de Crimes Hediondos restringe a progressão de regime de forma diferente do CP.`,
+    macete: `<strong>Lei especial tem prioridade. Se silente, aplica-se o CP como regra geral subsidiária.</strong>`,
+    doutrina: `O princípio da especialidade é critério de resolução de conflito aparente de normas: lei especial prevalece sobre lei geral.`
+  },
+  13: {
+    titulo: "Relação de Causalidade",
+    rubrica: "Nexo Causal — Causa do Crime",
+    texto: `Art. 13 - O resultado, de que depende a existência do crime, somente é imputável a quem lhe deu causa. Considera-se causa a ação ou omissão sem a qual o resultado não teria ocorrido.
+§ 1º - A superveniência de causa relativamente independente exclui a imputação quando, por si só, produziu o resultado; os fatos anteriores, entretanto, imputam-se a quem os praticou.
+§ 2º - A omissão é penalmente relevante quando o omitente devia e podia agir para evitar o resultado. O dever de agir incumbe a quem: a) tenha por lei obrigação de cuidado, proteção ou vigilância; b) de outra forma, assumiu a responsabilidade de impedir o resultado; c) com seu comportamento anterior, criou o risco da ocorrência do resultado.`,
+    teoria: `<p>O CP adota a <strong>teoria da equivalência dos antecedentes causais</strong> (conditio sine qua non): é causa tudo aquilo sem o qual o resultado não teria ocorrido. Para identificar a causa, usa-se o <strong>método hipotético de eliminação</strong> (Thyrén): elimina-se mentalmente o fato; se o resultado desaparecer, o fato é causa.</p>
+    <p>Para evitar o regresso ao infinito, doutrina majoritária acrescenta o requisito do <strong>dolo ou culpa</strong> como limitador da responsabilidade penal. A teoria da imputação objetiva (Roxin) é critério complementar: só se imputa o resultado quando o agente criou risco juridicamente não permitido, e esse risco se concretizou no resultado.</p>
+    <p><strong>Causas absolutamente independentes</strong>: preexistentes, concomitantes ou supervenientes que por si só produzem o resultado — rompem o nexo causal para qualquer das causas.</p>
+    <p><strong>Causas relativamente independentes</strong>: somente a causa <em>superveniente</em> que por si só produz o resultado rompe o nexo (§ 1º). As preexistentes e concomitantes não rompem.</p>`,
+    esquema: {
+      titulo: "Tipos de Causa e Efeitos no Nexo Causal",
+      boxes: [
+        {cor:"mint", label:"Causa Absolutamente Independente", texto:"Rompe nexo sempre — responde apenas pelo tentado"},
+        {cor:"gold", label:"Causa Relativamente Independente Preexistente/Concomitante", texto:"Não rompe nexo — agente responde pelo resultado"},
+        {cor:"crimson", label:"Causa Relativamente Independente Superveniente (por si só)", texto:"Rompe nexo — agente responde pelo tentado (§ 1º)"},
+      ]
+    },
+    exemplo: `João atira em Maria, que cai hospitalizada. No hospital, Maria é vítima de incêndio criminoso e morre. O incêndio é causa superveniente relativamente independente que por si só produziu o resultado morte. João responde apenas por <strong>tentativa de homicídio</strong>, não pelo homicídio consumado (§ 1º, art. 13).`,
+    dica: `O § 2º trata dos crimes omissivos impróprios (comissivos por omissão). São garantes: (a) obrigação legal (salva-vidas), (b) assunção voluntária (babá), (c) ingerência (quem criou o perigo). O garante que não age responde como se tivesse praticado a conduta comissiva.`,
+    macete: `<strong>Nexo Causal: "Sem isso o resultado ocorreria?" — NÃO = é causa. SIM = não é causa.</strong>`,
+    doutrina: `A teoria da imputação objetiva (Roxin, Jakobs) é cada vez mais aceita como complemento à teoria da causalidade, especialmente em crimes culposos. STJ tem aplicado critérios da imputação objetiva em alguns julgados.`
+  },
+  14: {
+    titulo: "O Crime Consumado e a Tentativa",
+    rubrica: "Iter Criminis",
+    texto: `Art. 14 - Diz-se o crime: I - consumado, quando nele se reúnem todos os elementos de sua definição legal; II - tentado, quando, iniciada a execução, não se consuma por circunstâncias alheias à vontade do agente.
+Parágrafo único - Salvo disposição em contrário, pune-se a tentativa com a pena correspondente ao crime consumado, diminuída de um a dois terços.`,
+    teoria: `<p>O <strong>iter criminis</strong> é o caminho percorrido pelo crime: cogitação → preparação → execução → consumação. A tentativa ocorre quando o agente inicia a fase executória mas não consuma o crime por razões alheias à sua vontade.</p>
+    <p><strong>Punição:</strong> pena do crime consumado reduzida de 1/3 a 2/3. Quanto mais próximo da consumação, menor a redução. Quanto mais distante, maior a redução.</p>
+    <p><strong>Crimes que não admitem tentativa:</strong> culposos, preterdolosos (a parte culposa), omissivos próprios, habituais, unissubsistentes, contravenções penais (art. 4º LCP), e quando a lei prevê forma tentada como crime autônomo.</p>`,
+    esquema: {
+      titulo: "Iter Criminis",
+      boxes: [
+        {cor:"gold", label:"Cogitação", texto:"Fase interna — impunível"},
+        {cor:"gold", label:"Preparação", texto:"Atos preparatórios — regra: impunível (exceto se autônomo)"},
+        {cor:"crimson", label:"Execução", texto:"Início → Tentativa possível aqui"},
+        {cor:"mint", label:"Consumação", texto:"Todos os elementos do tipo realizados"},
+      ]
+    },
+    exemplo: `Pedro aponta arma para Carlos com intenção de matar, mas é desarmado por terceiro antes de atirar. Pedro responde por <strong>tentativa de homicídio</strong> com pena reduzida de 1/3 a 2/3 (quanto mais próximo estava de consumar, menor a redução).`,
+    dica: `Distinção importante: tentativa perfeita (acabada) = agente esgotou todos os meios, mas o resultado não ocorreu (ex: todos os tiros foram disparados). Tentativa imperfeita (inacabada) = o agente não chegou a esgotar os meios (ex: foi interrompido no meio do ato).`,
+    macete: `<strong>Tentativa = início da execução + não consumação + por razão ALHEIA à vontade. Se desistiu voluntariamente = desistência voluntária (art. 15), não tentativa.</strong>`,
+    doutrina: `A doutrina diverge sobre o critério de distinção entre atos preparatórios e executórios. Prevalece a teoria objetiva-formal (Liszt): ato executório é aquele que inicia a realização do verbo núcleo do tipo.`
+  },
+  15: {
+    titulo: "Desistência Voluntária e Arrependimento Eficaz",
+    rubrica: "Tentativa Abandonada",
+    texto: `Art. 15 - O agente que, voluntariamente, desiste de prosseguir na execução ou impede que o resultado se produza, só responde pelos atos já praticados.`,
+    teoria: `<p><strong>Desistência voluntária:</strong> o agente inicia a execução, mas interrompe voluntariamente antes de esgotar os meios. Ex: atira uma vez e pode continuar, mas para. Responde pelos atos já praticados (ex: lesão corporal), não pela tentativa do crime que pretendia praticar.</p>
+    <p><strong>Arrependimento eficaz:</strong> o agente esgotou os meios (ex: envenenou a vítima), mas depois age eficazmente para evitar o resultado (ex: ministra antídoto). O resultado não ocorre. Responde pelos atos anteriores, não pelo crime pretendido.</p>
+    <p>Para ser válida, a desistência deve ser <strong>voluntária</strong> (não precisa ser espontânea — pode ter motivação externa, desde que não seja coação). Fórmula de Frank: "Posso mas não quero" = desistência voluntária; "Quero mas não posso" = tentativa.</p>`,
+    esquema: {
+      titulo: "Desistência vs. Tentativa vs. Arrependimento Eficaz",
+      boxes: [
+        {cor:"mint", label:"Desistência Voluntária", texto:"Não esgotou os meios + parou voluntariamente → responde só pelos atos praticados"},
+        {cor:"gold", label:"Arrependimento Eficaz", texto:"Esgotou meios + impediu o resultado eficazmente → responde só pelos atos praticados"},
+        {cor:"crimson", label:"Tentativa (Art. 14)", texto:"Não consumou por razão ALHEIA à vontade → pena reduzida de 1/3 a 2/3"},
+      ]
+    },
+    exemplo: `Fórmula de Frank: Se o agente diz "posso continuar, mas não quero" → desistência voluntária. Se diz "quero continuar, mas não posso" → tentativa punível.`,
+    dica: `O arrependimento eficaz exige que o resultado <strong>efetivamente não ocorra</strong>. Se o agente administra o antídoto mas a vítima morre assim mesmo, não há arrependimento eficaz — haverá homicídio consumado.`,
+    macete: `<strong>"Ponte de ouro" (Von Liszt): a lei incentiva o agente a desistir, recompensando-o com pena menor. Desistência = voluntária + eficaz → "ponte" para a impunidade do crime maior.</strong>`,
+    doutrina: `O art. 15 é chamado pela doutrina de "ponte de ouro" (Von Liszt) ou "prêmio pela desistência". Visa estimular que o agente, já no meio do caminho, pare ou reverta o dano.`
+  },
+  16: {
+    titulo: "Arrependimento Posterior",
+    rubrica: "Causa de Diminuição de Pena",
+    texto: `Art. 16 - Nos crimes cometidos sem violência ou grave ameaça à pessoa, reparado o dano ou restituída a coisa, até o recebimento da denúncia ou da queixa, por ato voluntário do agente, a pena será reduzida de um a dois terços.`,
+    teoria: `<p>O <strong>arrependimento posterior</strong> é causa de diminuição de pena (e não de exclusão do crime ou da pena) aplicável quando o agente, <strong>após a consumação</strong> do crime, repara o dano ou restitui a coisa.</p>
+    <p><strong>Requisitos:</strong> (1) crime sem violência ou grave ameaça à pessoa; (2) reparação do dano ou restituição da coisa; (3) ato voluntário do agente; (4) antes do recebimento da denúncia.</p>
+    <p>Não confundir com: <strong>arrependimento eficaz</strong> (antes da consumação, art. 15) e com a <strong>atenuante genérica</strong> de reparação do dano após a denúncia (art. 65, III, b).</p>`,
+    esquema: {
+      titulo: "Comparativo: Arrependimento Eficaz x Posterior",
+      boxes: [
+        {cor:"navy", label:"Arrependimento Eficaz (Art. 15)", texto:"Antes da consumação — impede o resultado — exclui tentativa qualificada"},
+        {cor:"gold", label:"Arrependimento Posterior (Art. 16)", texto:"Após consumação — repara dano — reduz pena de 1/3 a 2/3"},
+        {cor:"mint", label:"Atenuante Genérica (Art. 65, III, b)", texto:"Após a denúncia — atenua a pena (redução menor)"},
+      ]
+    },
+    exemplo: `Pedro furta uma bicicleta (sem violência). Antes do recebimento da denúncia, devolve-a voluntariamente ao dono. Aplica-se o art. 16: pena do furto reduzida de 1/3 a 2/3.`,
+    dica: `Se o crime foi praticado com violência ou grave ameaça (roubo, extorsão), o art. 16 NÃO se aplica. Nesse caso, pode-se aplicar apenas a atenuante genérica do art. 65, III, b (se reparou o dano antes do julgamento).`,
+    macete: `<strong>Art. 16: SEM violência + ANTES da denúncia + voluntário = reduz 1/3 a 2/3.</strong>`,
+    doutrina: `O STJ pacificou que o arrependimento posterior pode ser aplicado a crimes praticados por mais de um agente, mas apenas em favor daquele que efetivamente reparou o dano.`
+  },
+  17: {
+    titulo: "Crime Impossível",
+    rubrica: "Tentativa Inidônea",
+    texto: `Art. 17 - Não se pune a tentativa quando, por ineficácia absoluta do meio ou por absoluta impropriedade do objeto, é impossível consumar-se o crime.`,
+    teoria: `<p>O <strong>crime impossível</strong> (quase-crime ou tentativa inidônea) ocorre quando a tentativa, por sua própria natureza, jamais poderia ter resultado em crime consumado, em razão da <strong>ineficácia absoluta do meio</strong> (ex: usar açúcar para envenenar) ou da <strong>impropriedade absoluta do objeto</strong> (ex: atirar em cadáver).</p>
+    <p>A inidoneidade deve ser <strong>absoluta</strong>: se for apenas relativa (ex: a arma estava descarregada, mas poderia ser carregada), configura tentativa punível.</p>`,
+    esquema: {
+      titulo: "Crime Impossível vs. Tentativa Punível",
+      boxes: [
+        {cor:"crimson", label:"Ineficácia ABSOLUTA do Meio", texto:"Meio jamais poderia causar o resultado → crime impossível → impunível"},
+        {cor:"crimson", label:"Impropriedade ABSOLUTA do Objeto", texto:"Objeto jamais poderia ser lesado → crime impossível → impunível"},
+        {cor:"gold", label:"Ineficácia/Impropriedade RELATIVA", texto:"Poderia, em outras circunstâncias, ser eficaz → tentativa punível"},
+      ]
+    },
+    exemplo: `Joana tenta envenenar a sopa do marido com farinha de trigo achando ser arsênico. A farinha de trigo é absolutamente ineficaz para causar a morte. Crime impossível — Joana não é punida pela tentativa de homicídio (pode responder por atos preparatórios se autônomos).`,
+    dica: `Crime impossível ≠ crime putativo. Crime putativo (imaginário): o agente pensa que pratica crime, mas na verdade não existe tipo penal para sua conduta. No crime impossível, existe o tipo, mas a tentativa é absolutamente inidônea.`,
+    macete: `<strong>Crime impossível = ABSOLUTA ineficácia do meio OU ABSOLUTA impropriedade do objeto. RELATIVA = pune.</strong>`,
+    doutrina: `STF e STJ adotam a teoria objetiva temperada (Beling): só há crime impossível quando a ineficácia/impropriedade for absoluta. Se relativa (agente de infiltração, flagrante preparado), há controvérsia — STF: Súmula 145 — crime impossível quando há flagrante preparado; STJ diverge em alguns casos.`
+  },
+  18: {
+    titulo: "Crime Doloso e Culposo",
+    rubrica: "Elementos Subjetivos do Crime",
+    texto: `Art. 18 - Diz-se o crime: I - doloso, quando o agente quis o resultado ou assumiu o risco de produzi-lo; II - culposo, quando o agente deu causa ao resultado por imprudência, negligência ou imperícia.
+Parágrafo único - Salvo os casos expressos em lei, ninguém pode ser punido por fato previsto como crime, senão quando o pratica dolosamente.`,
+    teoria: `<p><strong>Dolo direto de 1º grau:</strong> o agente quer o resultado (elemento volitivo).</p>
+    <p><strong>Dolo direto de 2º grau (dolo de consequências necessárias):</strong> o agente quer o resultado principal e aceita como necessários os efeitos colaterais (ex: para matar o inimigo, explode avião, matando todos os passageiros).</p>
+    <p><strong>Dolo eventual:</strong> o agente não quer o resultado, mas assume o risco de produzi-lo — "se ocorrer, tudo bem" (teoria do consentimento de Frank).</p>
+    <p><strong>Culpa consciente:</strong> o agente prevê o resultado, mas acredita que não vai ocorrer. Diferença em relação ao dolo eventual: na culpa consciente, o agente confia que o resultado não vai acontecer.</p>
+    <p><strong>Culpa inconsciente:</strong> o agente não prevê o resultado, mas deveria prever.</p>`,
+    esquema: {
+      titulo: "Espécies de Dolo e Culpa",
+      boxes: [
+        {cor:"navy", label:"Dolo Direto 1º Grau", texto:"Quer o resultado — intenção direta"},
+        {cor:"navy", label:"Dolo Direto 2º Grau", texto:"Aceita efeitos colaterais necessários"},
+        {cor:"gold", label:"Dolo Eventual", texto:"Assume o risco — 'se ocorrer, tudo bem'"},
+        {cor:"gold", label:"Culpa Consciente", texto:"Prevê mas confia que não vai ocorrer"},
+        {cor:"mint", label:"Culpa Inconsciente", texto:"Não prevê — mas deveria prever"},
+      ]
+    },
+    exemplo: `Motorista em racha: se ele quer atropelar alguém = dolo direto. Se assume o risco de atropelar = dolo eventual. Se confia que vai desviar e não atropelará = culpa consciente.`,
+    dica: `O <strong>parágrafo único</strong> consagra o princípio da excepcionalidade do crime culposo: crime culposo só é punido quando a lei expressamente prevê ("se culposo"). Se a lei não mencionar, apenas a forma dolosa é punível.`,
+    macete: `<strong>"Dolo eventual: sei do risco e aceito. Culpa consciente: sei do risco mas acho que não vai ocorrer."</strong>`,
+    doutrina: `A distinção entre dolo eventual e culpa consciente é central em casos de homicídio em acidentes de trânsito. O STJ tem oscilado na aplicação, ora reconhecendo dolo eventual (racha), ora apenas culpa (embriaguez ao volante, conforme circunstâncias).`
+  },
+  19: {
+    titulo: "Agravação pelo Resultado",
+    rubrica: "Crime Preterdoloso",
+    texto: `Art. 19 - Pelo resultado que agrava especialmente a pena, só responde o agente que o houver causado ao menos culposamente.`,
+    teoria: `<p>O art. 19 veda a responsabilidade penal objetiva nos crimes qualificados pelo resultado. O agente só responde pelo resultado agravador se ao menos agiu <strong>com culpa</strong> em relação a ele.</p>
+    <p><strong>Crime preterdoloso:</strong> dolo no antecedente + culpa no consequente. Ex: lesão corporal seguida de morte (art. 129, § 3º) — o agente quer a lesão (dolo), mas produz a morte culposamente.</p>`,
+    esquema: {
+      titulo: "Crime Preterdoloso",
+      boxes: [
+        {cor:"navy", label:"Conduta Base", texto:"Praticada com DOLO (agente quer o resultado básico)"},
+        {cor:"gold", label:"Resultado Agravador", texto:"Produzido com CULPA (no mínimo) — art. 19"},
+        {cor:"crimson", label:"Vedação", texto:"Proibida responsabilidade objetiva — não basta nexo causal"},
+      ]
+    },
+    exemplo: `João desfere soco em Carlos com intenção de lesionar. Carlos, com problema cardíaco que João desconhecia, morre. João responde por lesão corporal seguida de morte (preterdoloso) apenas se era <em>previsível</em> o resultado morte — se não era previsível, João responde apenas pela lesão dolosa.`,
+    dica: `O art. 19 é a consagração do princípio da culpabilidade: proíbe responsabilidade penal objetiva (pura causalidade sem culpa). Mesmo no resultado mais grave, exige-se ao menos negligência, imprudência ou imperícia.`,
+    macete: `<strong>Para o resultado agravador = DOLO ou CULPA (ao menos culpa). Nunca só nexo causal.</strong>`,
+    doutrina: `A vedação da responsabilidade objetiva é corolário do princípio da culpabilidade (nullum crimen sine culpa), um dos pilares do Direito Penal moderno.`
+  },
+  20: {
+    titulo: "Erro de Tipo",
+    rubrica: "Exclusão do Dolo",
+    texto: `Art. 20 - O erro sobre elemento constitutivo do tipo legal de crime exclui o dolo, mas permite a punição por crime culposo, se previsto em lei.
+§ 1º - É isento de pena quem, por erro plenamente justificado pelas circunstâncias, supõe situação de fato que, se existisse, tornaria a ação legítima. Não há isenção de pena quando o erro deriva de culpa e o fato é punível como crime culposo.
+§ 2º - Responde pelo crime o terceiro que determina o erro.
+§ 3º - O erro quanto à pessoa contra a qual o crime é praticado não isenta de pena. Não se consideram, neste caso, as condições ou qualidades da vítima real, mas as da vítima visada.`,
+    teoria: `<p><strong>Erro de tipo</strong>: o agente tem falsa percepção da realidade sobre elemento do tipo penal. Ele não sabe que está praticando um crime.</p>
+    <p>Se o erro for <strong>escusável (invencível)</strong>: exclui dolo <em>e</em> culpa → fato atípico.</p>
+    <p>Se o erro for <strong>inescusável (vencível)</strong>: exclui dolo, mas permite punição por culpa se prevista em lei.</p>
+    <p><strong>Erro de tipo acidental</strong> (§§ 2º e 3º): não exclui dolo — inclui o erro sobre o objeto, sobre a pessoa e aberratio ictus.</p>
+    <p><strong>Erro sobre a pessoa (§ 3º):</strong> o agente quer matar "A" mas mata "B" por confusão. Responde como se tivesse matado "A" (vítima virtual), não "B".</p>`,
+    esquema: {
+      titulo: "Erro de Tipo — Espécies e Consequências",
+      boxes: [
+        {cor:"mint", label:"Erro Essencial Escusável", texto:"Exclui dolo E culpa → fato atípico"},
+        {cor:"gold", label:"Erro Essencial Inescusável", texto:"Exclui dolo → mantém culpa (se prevista)"},
+        {cor:"crimson", label:"Erro Sobre a Pessoa (§3)", texto:"Não exclui dolo — responde pelas qualidades da vítima VISADA"},
+        {cor:"navy", label:"§1 — Descriminante Putativa", texto:"Supõe situação justificante que não existe — erro sobre pressupostos fáticos"},
+      ]
+    },
+    exemplo: `Caçador atira em vulto no mato achando ser um animal (erro escusável) — mata um ser humano. Erro de tipo escusável: exclui dolo e culpa. Caçador não responde por nada (fato atípico). Se o erro era previsível (imprudente), responde por homicídio culposo.`,
+    dica: `Não confundir: <strong>Erro de tipo</strong> (art. 20) recai sobre elemento do tipo — o agente não sabe que está praticando fato proibido. <strong>Erro de proibição</strong> (art. 21) recai sobre a ilicitude — o agente sabe o que faz, mas acredita ser lícito.`,
+    macete: `<strong>Erro de tipo → exclui o DOLO (mente a intenção). Erro de proibição → exclui a CULPABILIDADE (mente o saber que é errado).</strong>`,
+    doutrina: `A doutrina finalista (Welzel) diferencia erro de tipo de erro de proibição. O erro de tipo afasta o dolo (elemento do fato típico); o erro de proibição afasta a culpabilidade (por inexigibilidade de conduta diversa).`
+  },
+  21: {
+    titulo: "Erro Sobre a Ilicitude do Fato",
+    rubrica: "Erro de Proibição",
+    texto: `Art. 21 - O desconhecimento da lei é inescusável. O erro sobre a ilicitude do fato, se inevitável, isenta de pena; se evitável, poderá diminuí-la de um sexto a um terço.
+Parágrafo único - Considera-se evitável o erro se o agente atua ou se omite sem a consciência da ilicitude do fato, quando lhe era possível, nas circunstâncias, ter ou atingir essa consciência.`,
+    teoria: `<p><strong>Erro de proibição:</strong> o agente sabe o que faz, mas acredita que sua conduta é lícita (desconhece que é crime ou acredita estar amparado por causa justificante inexistente).</p>
+    <p>Atenção: "desconhecimento da lei é inescusável" (norma geral civil) ≠ erro de proibição. O erro de proibição não é sobre o texto legal, mas sobre a ilicitude concreta do fato.</p>
+    <p>Se <strong>inevitável (escusável)</strong>: isenta de pena (exclui culpabilidade).</p>
+    <p>Se <strong>evitável (inescusável)</strong>: reduz a pena de 1/6 a 1/3.</p>`,
+    esquema: {
+      titulo: "Erro de Tipo vs. Erro de Proibição",
+      boxes: [
+        {cor:"mint", label:"Erro de Tipo (Art. 20)", texto:"Falsa percepção da realidade — exclui o DOLO (tipicidade)"},
+        {cor:"crimson", label:"Erro de Proibição (Art. 21)", texto:"Crê ser lícita a conduta — exclui ou reduz CULPABILIDADE"},
+      ]
+    },
+    exemplo: `Turista estrangeiro traz maconha ao Brasil, pois em seu país é legal e ele desconhecia a proibição brasileira. Se o erro era inevitável (ex: viajante que não tinha como saber), isenta de pena. Se era evitável (qualquer diligência revelaria a proibição), apenas reduz a pena.`,
+    dica: `O erro de proibição direto (acha que a conduta é lícita) ≠ erro de proibição indireto (descriminante putativa por erro sobre os limites da justificante — ex: acha que pode reagir mesmo sem agressão iminente).`,
+    macete: `<strong>Erro de TIPO = sobre OS FATOS (o que faz). Erro de PROIBIÇÃO = sobre O DIREITO (se pode fazer).</strong>`,
+    doutrina: `Na teoria finalista, a consciência da ilicitude é requisito da culpabilidade. O erro de proibição invencível exclui a culpabilidade; o vencível apenas a atenua.`
+  },
+  22: {
+    titulo: "Coação Irresistível e Obediência Hierárquica",
+    rubrica: "Causas de Exclusão da Culpabilidade",
+    texto: `Art. 22 - Se o fato é cometido sob coação irresistível ou em estrita obediência a ordem, não manifestamente ilegal, de superior hierárquico, só é punível o autor da coação ou da ordem.`,
+    teoria: `<p><strong>Coação irresistível:</strong> o agente pratica o crime por coação física ou moral que não pode resistir. A coação física irresistível exclui a própria conduta (força maior); a coação moral irresistível exclui a culpabilidade (inexigibilidade de conduta diversa).</p>
+    <p><strong>Obediência hierárquica:</strong> o subordinado obedece a ordem de superior hierárquico que não seja manifestamente ilegal. Exclui culpabilidade do subordinado; o superior responde pelo crime em autoria mediata.</p>
+    <p>Se a ordem for <strong>manifestamente ilegal</strong>, ambos respondem: o superior como mandante, o subordinado como executor (não há isenção).</p>`,
+    esquema: {
+      titulo: "Coação e Obediência Hierárquica",
+      boxes: [
+        {cor:"mint", label:"Coação Moral Irresistível", texto:"Exclui culpabilidade do coagido — responde o coator"},
+        {cor:"gold", label:"Obediência Hierárquica", texto:"Ordem não manifestamente ilegal — exclui culpabilidade do subordinado"},
+        {cor:"crimson", label:"Ordem Manifestamente Ilegal", texto:"Ambos respondem — subordinado não tem isenção"},
+      ]
+    },
+    exemplo: `Policial que sob ameaça de morte (coação moral irresistível) pratica delito determinado pelo superior não responde pelo crime. O superior responde como autor mediato.`,
+    dica: `Coação física irresistível (vis absoluta) = não há conduta → o fato é atípico (ausência de ato voluntário). Coação moral irresistível (vis compulsiva) = há conduta, mas exclui a culpabilidade.`,
+    macete: `<strong>Vis absoluta = sem conduta. Vis compulsiva irresistível = sem culpabilidade.</strong>`,
+    doutrina: `A inexigibilidade de conduta diversa é fundamento supralegal de exclusão da culpabilidade, reconhecida doutrinariamente mesmo fora dos casos expressos do art. 22.`
+  },
+  23: {
+    titulo: "Exclusão de Ilicitude",
+    rubrica: "Causas Justificantes",
+    texto: `Art. 23 - Não há crime quando o agente pratica o fato: I - em estado de necessidade; II - em legítima defesa; III - em estrito cumprimento de dever legal ou no exercício regular de direito.
+Parágrafo único - O agente, em qualquer das hipóteses deste artigo, responderá pelo excesso doloso ou culposo.`,
+    teoria: `<p>As excludentes de ilicitude (ou causas justificantes) são situações em que a conduta típica não é ilícita. O fato é típico, mas não há crime por ausência de ilicitude.</p>
+    <p><strong>Permissões legais:</strong> estado de necessidade (art. 24), legítima defesa (art. 25), estrito cumprimento do dever legal e exercício regular de direito.</p>
+    <p><strong>Excesso:</strong> o parágrafo único prevê que o excesso na causa justificante é punível, dolosa ou culposamente.</p>`,
+    esquema: {
+      titulo: "As 4 Excludentes de Ilicitude",
+      boxes: [
+        {cor:"navy", label:"Estado de Necessidade (Art. 24)", texto:"Salvar bem jurídico sacrificando outro"},
+        {cor:"gold", label:"Legítima Defesa (Art. 25)", texto:"Repelir agressão injusta, atual ou iminente"},
+        {cor:"mint", label:"Estrito Cumprimento do Dever Legal", texto:"Agente público no exercício de suas funções"},
+        {cor:"crimson", label:"Exercício Regular de Direito", texto:"Conduta permitida pelo ordenamento jurídico"},
+      ]
+    },
+    exemplo: `Médico que realiza cirurgia necessária mesmo sem consentimento em caso de emergência age no exercício regular de direito. Policial que algema suspeito age em estrito cumprimento do dever legal. Ambos têm a ilicitude excluída.`,
+    dica: `Excludentes de ilicitude ≠ excludentes de culpabilidade. Ilicitude = o fato em si não é proibido. Culpabilidade = o fato é proibido, mas não se pode reprovar o agente.`,
+    macete: `<strong>Ilicitude excluída = FATO LÍCITO (não há crime). Culpabilidade excluída = fato é ilícito, mas sem reprovação (há crime, sem pena).</strong>`,
+    doutrina: `As excludentes de ilicitude são chamadas de "tipo permissivo" pela doutrina alemã. Geram efeitos em todo o ordenamento — afastam ilicitude inclusive para fins civis e administrativos.`
+  },
+  24: {
+    titulo: "Estado de Necessidade",
+    rubrica: "Excludente de Ilicitude",
+    texto: `Art. 24 - Considera-se em estado de necessidade quem pratica o fato para salvar de perigo atual, que não provocou por sua vontade, nem podia de outro modo evitar, direito próprio ou alheio, cujo sacrifício, nas circunstâncias, não era razoável exigir-se.
+§ 1º - Não pode alegar estado de necessidade quem tinha o dever legal de enfrentar o perigo.
+§ 2º - Embora seja razoável exigir-se o sacrifício do direito ameaçado, a pena poderá ser reduzida de um a dois terços.`,
+    teoria: `<p><strong>Requisitos do estado de necessidade:</strong> (1) perigo atual; (2) não provocado voluntariamente; (3) inevitabilidade — não podia evitar de outro modo; (4) proporcionalidade — o bem salvo é de valor igual ou superior ao sacrificado; (5) inexigibilidade do sacrifício.</p>
+    <p>Teoria diferenciadora (doutrina majoritária): se o bem salvo é de maior valor → estado de necessidade justificante (exclui ilicitude); se de igual valor → pode excluir ilicitude; se de menor valor → apenas exclui culpabilidade (estado de necessidade exculpante).</p>
+    <p>Teoria unitária (adotada pelo CP): qualquer estado de necessidade exclui a ilicitude; se o sacrifício do bem era exigível, apenas reduz a pena (§ 2º).</p>`,
+    esquema: {
+      titulo: "Requisitos do Estado de Necessidade",
+      boxes: [
+        {cor:"navy", label:"1. Perigo Atual", texto:"Perigo presente, não passado nem futuro"},
+        {cor:"navy", label:"2. Não Provocado", texto:"Agente não criou voluntariamente o perigo"},
+        {cor:"gold", label:"3. Inevitabilidade", texto:"Não havia outro meio menos lesivo"},
+        {cor:"gold", label:"4. Proporcionalidade", texto:"Bem salvo ≥ bem sacrificado"},
+        {cor:"mint", label:"5. Dever de Enfrentar", texto:"Quem tem dever legal NÃO pode alegar (§1)"},
+      ]
+    },
+    exemplo: `Naufrágio: dois sobreviventes disputam uma tábua que suporta apenas um. Um deles empurra o outro para se salvar. Estado de necessidade — bens de igual valor (ambas as vidas). Exclui ilicitude pelo CP (teoria unitária).`,
+    dica: `<strong>Bombeiro, policial e salva-vidas</strong> têm dever legal de enfrentar o perigo (§ 1º) — não podem alegar estado de necessidade para deixar de cumprir sua função. Entretanto, podem alegar se o perigo for desproporcional ao esperado na função.`,
+    macete: `<strong>Estado de necessidade: "Perigo atual + não provocou + não tinha outro jeito + bem salvo vale mais ou igual"</strong>`,
+    doutrina: `O CP adotou a teoria unitária; a doutrina majoritária (Zaffaroni, Cirino dos Santos) prefere a diferenciadora. Para concursos, aplica-se a teoria unitária do CP.`
+  },
+  25: {
+    titulo: "Legítima Defesa",
+    rubrica: "Excludente de Ilicitude",
+    texto: `Art. 25 - Entende-se em legítima defesa quem, usando moderadamente dos meios necessários, repele injusta agressão, atual ou iminente, a direito seu ou de outrem.
+Parágrafo único - Observados os requisitos previstos no caput deste artigo, considera-se também em legítima defesa o agente de segurança pública que repele agressão ou risco de agressão a vítima mantida refém durante a prática de crimes. (Incluído pela Lei nº 13.964, de 2019)`,
+    teoria: `<p><strong>Requisitos da legítima defesa:</strong> (1) agressão injusta; (2) atual ou iminente; (3) a direito próprio ou de terceiro; (4) uso moderado dos meios necessários; (5) animus defendendi (consciência de defesa).</p>
+    <p><strong>Agressão injusta:</strong> não precisa ser crime — basta ser contrária ao direito. Pode vir de inimputável.</p>
+    <p><strong>Atual ou iminente:</strong> em curso ou prestes a iniciar. Agressão futura ou já encerrada não autoriza legítima defesa (seria vingança).</p>
+    <p><strong>Meios necessários:</strong> os suficientes para repelir a agressão. Moderação = proporcionalidade no uso desses meios.</p>`,
+    esquema: {
+      titulo: "Estado de Necessidade vs. Legítima Defesa",
+      boxes: [
+        {cor:"navy", label:"Legítima Defesa", texto:"Agressão HUMANA injusta — defende-se do agressor"},
+        {cor:"gold", label:"Estado de Necessidade", texto:"Situação de perigo — sacrifica bem de TERCEIRO inocente"},
+      ]
+    },
+    exemplo: `Assaltante aponta arma e Pedro saca seu revólver e atira no assaltante. Legítima defesa: agressão injusta (roubo), atual (em curso), uso dos meios necessários (revólver para repelir revólver). Se Pedro atirou 10 vezes após o assaltante cair, há excesso punível.`,
+    dica: `<strong>Legítima defesa recíproca:</strong> não é admissível entre os dois agressores originais. Mas é possível para quem defende terceiro que reage a agressão injusta.`,
+    macete: `<strong>"Injusta, atual/iminente, moderada" — os 3 pilares da legítima defesa.</strong>`,
+    doutrina: `O pacote anticrime (Lei 13.964/2019) inseriu o parágrafo único, reconhecendo legítima defesa do agente de segurança pública em situações de reféns. Muito cobrado em concursos recentes.`
+  },
+  26: {
+    titulo: "Inimputáveis",
+    rubrica: "Doença Mental e Desenvolvimento Incompleto",
+    texto: `Art. 26 - É isento de pena o agente que, por doença mental ou desenvolvimento mental incompleto ou retardado, era, ao tempo da ação ou da omissão, inteiramente incapaz de entender o caráter ilícito do fato ou de determinar-se de acordo com esse entendimento.
+Parágrafo único - A pena pode ser reduzida de um a dois terços, se o agente, em virtude de perturbação de saúde mental ou por desenvolvimento mental incompleto ou retardado não era inteiramente capaz de entender o caráter ilícito do fato ou de determinar-se de acordo com esse entendimento.`,
+    teoria: `<p>O CP adota um sistema misto (biopsicológico) para aferição da inimputabilidade: exige causa biológica (doença mental, desenvolvimento incompleto/retardado) <em>e</em> efeito psicológico (incapacidade total de entender o ilícito ou de se determinar conforme esse entendimento).</p>
+    <p><strong>Inimputável (caput):</strong> totalmente incapaz → isento de pena → sujeito a medida de segurança (internação ou tratamento ambulatorial).</p>
+    <p><strong>Semi-imputável (parágrafo único):</strong> capacidade reduzida → pena diminuída de 1/3 a 2/3 <em>ou</em> medida de segurança (sistema vicariante — juiz escolhe um dos dois).</p>`,
+    esquema: {
+      titulo: "Graus de Imputabilidade por Doença Mental",
+      boxes: [
+        {cor:"crimson", label:"Inimputável (Caput)", texto:"Totalmente incapaz → Medida de segurança"},
+        {cor:"gold", label:"Semi-imputável (§ único)", texto:"Parcialmente incapaz → Pena reduzida OU medida de segurança"},
+        {cor:"mint", label:"Imputável", texto:"Capaz de entender e se autodeterminar → Pena normal"},
+      ]
+    },
+    exemplo: `Psicótico esquizofrênico que, durante surto, mata sem entender o que faz → inimputável → medida de segurança (internação). Se em remissão parcial e pratica crime → pode ser semi-imputável → pena reduzida ou medida de segurança.`,
+    dica: `Semi-imputável = sistema vicariante (ou pena reduzida OU medida de segurança). O juiz escolhe conforme o caso. Inimputável = apenas medida de segurança (nunca pena privativa de liberdade).`,
+    macete: `<strong>INIMPUTÁVEL = "Insano total" → Medida de Segurança. SEMI = "Parcial" → Pena ou Medida.</strong>`,
+    doutrina: `O sistema biopsicológico foi escolhido para evitar que a mera existência de doença mental, sem repercussão na capacidade, resulte em isenção de pena.`
+  },
+  27: {
+    titulo: "Menores de 18 Anos",
+    rubrica: "Inimputabilidade por Idade",
+    texto: `Art. 27 - Os menores de 18 (dezoito) anos são penalmente inimputáveis, ficando sujeitos às normas estabelecidas na legislação especial.`,
+    teoria: `<p>A inimputabilidade dos menores de 18 anos adota critério <strong>biológico puro</strong> (presunção absoluta): independentemente de qualquer avaliação da capacidade de entendimento, o menor de 18 anos é inimputável.</p>
+    <p>Fundamentação constitucional: CF/88, art. 228. A imputabilidade penal do menor não pode ser reduzida por Emenda Constitucional (cláusula pétrea implícita — posição majoritária na doutrina e STF).</p>
+    <p>O menor responde pelas infrações nos termos do <strong>Estatuto da Criança e do Adolescente (ECA — Lei 8.069/90)</strong>.</p>`,
+    esquema: {
+      titulo: "Critérios de Aferição da Inimputabilidade",
+      boxes: [
+        {cor:"crimson", label:"Menor de 18 (Art. 27)", texto:"Critério biológico PURO — presunção absoluta — não admite prova em contrário"},
+        {cor:"gold", label:"Doença Mental (Art. 26)", texto:"Critério biopsicológico — exige laudo pericial"},
+        {cor:"mint", label:"Embriaguez (Art. 28)", texto:"Critério específico — regras próprias"},
+      ]
+    },
+    exemplo: `Adolescente de 17 anos pratica homicídio. É inimputável pelo CP (art. 27). Responde perante o ECA: pode receber medida socioeducativa de internação por até 3 anos.`,
+    dica: `Para aferir a inimputabilidade etária, usa-se a teoria da atividade (art. 4º): o que importa é a idade no momento da <em>ação</em>, não do resultado. Se tinha 17 anos ao atirar e a vítima morre quando tinha 18 anos, era inimputável.`,
+    macete: `<strong>Menor de 18 = ECA. Maior de 18 = CP. Ponto final. (Regra absoluta, sem exceção no ordenamento penal comum).</strong>`,
+    doutrina: `A maioria da doutrina considera a inimputabilidade dos menores de 18 anos como cláusula pétrea, impedindo PEC que reduza a maioridade penal.`
+  },
+  28: {
+    titulo: "Emoção e Paixão. Embriaguez",
+    rubrica: "Imputabilidade e Embriaguez",
+    texto: `Art. 28 - Não excluem a imputabilidade penal: I - a emoção ou a paixão; II - a embriaguez, voluntária ou culposa, pelo álcool ou substância de efeitos análogos.
+§ 1º - É isento de pena o agente que, por embriaguez completa, proveniente de caso fortuito ou força maior, era, ao tempo da ação ou da omissão, inteiramente incapaz de entender o caráter ilícito do fato ou de determinar-se de acordo com esse entendimento.
+§ 2º - A pena pode ser reduzida de um a dois terços, se o agente, por embriaguez, proveniente de caso fortuito ou força maior, não possuía, ao tempo da ação ou da omissão, a plena capacidade de entender o caráter ilícito do fato ou de determinar-se de acordo com esse entendimento.`,
+    teoria: `<p><strong>Emoção e paixão</strong> nunca excluem imputabilidade (podem ser circunstâncias atenuantes em algumas situações específicas, mas não isentam de pena).</p>
+    <p><strong>Embriaguez voluntária/culposa:</strong> não exclui imputabilidade. Fundamento: teoria da <em>actio libera in causa</em> — o agente foi livre para se embriagar, sendo responsável pelos atos praticados em estado etílico.</p>
+    <p><strong>Embriaguez involuntária (fortuita/força maior):</strong> se completa → isenta de pena (exclui imputabilidade); se incompleta → reduz pena de 1/3 a 2/3.</p>`,
+    esquema: {
+      titulo: "Embriaguez e Imputabilidade",
+      boxes: [
+        {cor:"crimson", label:"Voluntária ou Culposa", texto:"NÃO exclui imputabilidade — actio libera in causa"},
+        {cor:"gold", label:"Preordenada", texto:"Agrava a pena — bebeu para cometer o crime"},
+        {cor:"mint", label:"Fortuita Completa", texto:"EXCLUI imputabilidade — isento de pena (§1)"},
+        {cor:"gold", label:"Fortuita Incompleta", texto:"Reduz a pena de 1/3 a 2/3 (§2)"},
+      ]
+    },
+    exemplo: `Operário que, ao usar solvente químico sem informação adequada, fica completamente embriagado por força dos vapores e pratica um crime → embriaguez por caso fortuito → se completa, isento de pena.`,
+    dica: `Embriaguez preordenada (o agente bebe para ter "coragem" de cometer o crime) é circunstância agravante (art. 61, II, "l" do CP).`,
+    macete: `<strong>VOLUNTÁRIA/CULPOSA = imputa. FORTUITA COMPLETA = isenta. FORTUITA INCOMPLETA = reduz.</strong>`,
+    doutrina: `A actio libera in causa justifica a imputabilidade na embriaguez voluntária/culposa: a liberdade de ação, que determina a imputabilidade, é aferida no momento em que o agente decidiu se embriagar.`
+  },
+  29: {
+    titulo: "Concurso de Pessoas",
+    rubrica: "Coautoria e Participação",
+    texto: `Art. 29 - Quem, de qualquer modo, concorre para o crime incide nas penas a este cominadas, na medida de sua culpabilidade.
+§ 1º - Se a participação for de menor importância, a pena pode ser diminuída de um sexto a um terço.
+§ 2º - Se algum dos concorrentes quis participar de crime menos grave, ser-lhe-á aplicada a pena deste; essa pena será aumentada até metade, na hipótese de ter sido previsível o resultado mais grave.`,
+    teoria: `<p>O CP adota a <strong>teoria monista (unitária)</strong>: todos os coautores e partícipes respondem pelo mesmo crime, embora com penas individualizadas conforme a culpabilidade.</p>
+    <p><strong>Coautoria:</strong> realização conjunta do núcleo do tipo.</p>
+    <p><strong>Participação:</strong> contribuição acessória — induzimento, instigação ou auxílio material/moral — sem realizar diretamente a conduta típica.</p>
+    <p><strong>Cooperação dolosamente distinta (§ 2º):</strong> se o partícipe queria crime menos grave, responde pelo crime que pretendia, com possível aumento se o resultado mais grave era previsível.</p>`,
+    esquema: {
+      titulo: "Formas de Concurso de Pessoas",
+      boxes: [
+        {cor:"navy", label:"Coautoria", texto:"Realização conjunta do núcleo do tipo — "co-execução""},
+        {cor:"gold", label:"Participação por Induzimento", texto:"Faz surgir no autor a resolução criminosa"},
+        {cor:"gold", label:"Participação por Instigação", texto:"Reforça resolução já existente"},
+        {cor:"mint", label:"Participação por Auxílio", texto:"Auxílio material ou moral antes/durante o crime"},
+      ]
+    },
+    exemplo: `João planeja o roubo, Pedro vigia a rua e Carlos executa o roubo. Carlos = coautor. Pedro = partícipe (auxílio). João = partícipe (induzimento). Todos respondem pelo roubo (teoria monista), mas com penas individualizadas.`,
+    dica: `Requisitos do concurso de pessoas: (1) pluralidade de agentes; (2) relevância causal da contribuição; (3) liame subjetivo (vínculo psicológico entre os agentes); (4) identidade de infração penal.`,
+    macete: `<strong>MONISMO: um crime, várias penas. Coautor = executa. Partícipe = auxilia, induz, instiga (sem executar o núcleo).</strong>`,
+    doutrina: `A teoria monista é a adotada pelo CP. A teoria pluralista (cada um responde por crime autônomo) é excepcional no CP (ex: bigamia — art. 235: cada cônjuge responde por crime diferente).`
+  },
+  30: {
+    titulo: "Circunstâncias Incomunicáveis",
+    rubrica: "Comunicabilidade no Concurso",
+    texto: `Art. 30 - Não se comunicam as circunstâncias e as condições de caráter pessoal, salvo quando elementares do crime.`,
+    teoria: `<p>Distinguem-se:</p>
+    <p><strong>Elementares:</strong> dados essenciais do tipo penal (sem os quais não há crime ou há crime diverso). Comunicam-se a todos os coautores/partícipes que as conhecem.</p>
+    <p><strong>Circunstâncias:</strong> dados acidentais que agravam ou atenuam a pena, sem alterar a essência do crime. As de caráter pessoal NÃO se comunicam; as de caráter objetivo SE comunicam (desde que os demais agentes as conheçam).</p>`,
+    esquema: {
+      titulo: "O Que Se Comunica e o Que Não Se Comunica",
+      boxes: [
+        {cor:"mint", label:"Elementares do Tipo", texto:"COMUNICAM-SE a todos (se conhecidas)"},
+        {cor:"crimson", label:"Circunstâncias Pessoais", texto:"NÃO se comunicam (ex: reincidência, motivo de ordem pessoal)"},
+        {cor:"gold", label:"Circunstâncias Objetivas", texto:"Comunicam-se se conhecidas pelos demais coautores"},
+      ]
+    },
+    exemplo: `Funcionário público (elementar do peculato) convida particular para subtrair valores públicos. A qualidade de funcionário público comunica-se ao particular, que também responde por peculato (e não por furto), desde que ele saiba da qualidade do coautor.`,
+    dica: `Exemplo clássico: empregada que ajuda estranho a furtar a casa do patrão. A qualidade de empregada doméstica (elementar da "violação de domicílio facilitada") comunica-se ao estranho se ele a conhecia.`,
+    macete: `<strong>ELEMENTAR → sempre comunica (se conhecida). CIRCUNSTÂNCIA PESSOAL → nunca comunica. CIRCUNSTÂNCIA OBJETIVA → comunica se conhecida.</strong>`,
+    doutrina: `A comunicabilidade das elementares é essencial para a teoria monista do concurso de pessoas — sem ela, cada agente responderia por crimes diferentes conforme suas qualidades pessoais.`
+  },
+  31: {
+    titulo: "Casos de Impunibilidade",
+    rubrica: "Ajuste, Determinação, Instigação e Auxílio",
+    texto: `Art. 31 - O ajuste, a determinação ou instigação e o auxílio, salvo disposição expressa em contrário, não são puníveis, se o crime não chega, pelo menos, a ser tentado.`,
+    teoria: `<p>Como regra geral, a participação (ajuste, determinação, instigação, auxílio) só é punível se o crime ao menos chegar à fase de tentativa. Se o crime nem sequer foi tentado, o mero acordo ou auxílio é impunível.</p>
+    <p>Exceções expressas em lei: a <em>associação criminosa</em> (art. 288 CP), <em>quadrilha ou bando</em> (CP antigo), e o <em>acordo para prática de crime de tráfico</em> (Lei 11.343/06) são puníveis independentemente do início da execução do crime acordado.</p>`,
+    exemplo: `João e Pedro combinam assaltar um banco, mas desistem antes de qualquer ato executório. O simples acordo (ajuste) não é punível pelo art. 31 — não houve início de tentativa. Se, porém, a associação for permanente (art. 288), há crime de associação criminosa mesmo sem o roubo.`,
+    dica: `O art. 31 é o fundamento pelo qual o simples pacto criminoso (conspiracy) não é crime no Brasil, salvo nos casos expressos de associação criminosa, organização criminosa etc.`,
+    macete: `<strong>Regra: sem tentativa, sem punição do partícipe. Exceção: tipos especiais punem o acordo em si (associação criminosa, organização criminosa).</strong>`,
+    doutrina: `O art. 31 é corolário da acessoriedade da participação: a participação é acessória e dependente do crime principal. Sem crime tentado ou consumado, não há participação punível.`
+  }
+};
+
+const QUESTOES = [
+  {
+    art: 1,
+    enunciado: "Segundo o princípio da legalidade previsto no art. 1º do Código Penal, é CORRETO afirmar que:",
+    opcoes: [
+      "A analogia em Direito Penal é absolutamente vedada, inclusive a favorável ao réu.",
+      "Medida provisória pode criar tipos penais em casos de urgência e relevância.",
+      "Não há crime sem lei anterior que o defina, sendo vedada a criação de crimes por analogia em prejuízo do réu.",
+      "O costume pode ser fonte do Direito Penal incriminador desde que amplamente reconhecido pela sociedade.",
+    ],
+    gabarito: 2,
+    explicacao: "O art. 1º consagra o princípio da legalidade (nullum crimen, nulla poena sine lege), vedando a analogia in malam partem. Medida provisória NÃO pode criar crimes (STF). Costumes não são fonte incriminadora. A analogia in bonam partem é permitida."
+  },
+  {
+    art: 2,
+    enunciado: "João foi condenado por crime que lei posterior deixou de considerar como infração penal. João ainda cumpre pena. Nessa situação, deve ser aplicado o instituto da:",
+    opcoes: [
+      "Novatio legis in pejus, mantendo-se a condenação.",
+      "Abolitio criminis, com extinção da punibilidade e cessação da execução.",
+      "Novatio legis in mellius, reduzindo-se a pena em abstrato.",
+      "Ultra-atividade da lei penal, mantendo os efeitos da condenação anterior.",
+    ],
+    gabarito: 1,
+    explicacao: "Abolitio criminis (art. 2º): quando lei nova deixa de considerar crime determinada conduta, extingue a punibilidade imediatamente, mesmo após trânsito em julgado, cessando a execução e os efeitos penais (não os civis)."
+  },
+  {
+    art: 4,
+    enunciado: "Sobre o tempo do crime no Código Penal Brasileiro, é correto afirmar que o CP adota a teoria:",
+    opcoes: [
+      "Da ubiquidade, considerando praticado o crime tanto no momento da ação quanto no momento do resultado.",
+      "Do resultado, considerando praticado o crime no momento em que ocorreu o resultado.",
+      "Da atividade, considerando praticado o crime no momento da ação ou omissão.",
+      "Mista, variando conforme a natureza do crime.",
+    ],
+    gabarito: 2,
+    explicacao: "Para o TEMPO do crime, o CP adota a Teoria da Atividade (art. 4º): considera-se praticado o crime no momento da ação ou omissão. Para o LUGAR do crime, adota-se a Ubiquidade (art. 6º). Macete: TALU."
+  },
+  {
+    art: 13,
+    enunciado: "João atira em Pedro, que é hospitalizado com ferimento. No hospital, Pedro morre em decorrência de incêndio criminoso provocado por terceiro. Quanto à responsabilidade de João pelo resultado morte:",
+    opcoes: [
+      "João responde por homicídio consumado, pois deu início à cadeia causal.",
+      "João não responde nem pelo tiro (isenção total por ser causa superveniente).",
+      "João responde apenas pela tentativa de homicídio, pois houve causa superveniente relativamente independente que por si só produziu o resultado (art. 13, §1º).",
+      "João responde por homicídio culposo, pois não previu o incêndio.",
+    ],
+    gabarito: 2,
+    explicacao: "Pelo art. 13, §1º: a superveniência de causa relativamente independente (incêndio criminoso) que, por si só, produziu o resultado (morte) exclui a imputação do resultado mais grave para João. Ele responde apenas pelos atos anteriores: tentativa de homicídio."
+  },
+  {
+    art: 14,
+    enunciado: "Sobre a tentativa no Direito Penal Brasileiro, é INCORRETO afirmar:",
+    opcoes: [
+      "A tentativa é punida com a pena do crime consumado reduzida de 1 a 2 terços.",
+      "Os crimes culposos admitem tentativa.",
+      "A tentativa exige início da execução e não consumação por circunstâncias alheias à vontade do agente.",
+      "Quanto mais próximo da consumação, menor deve ser a redução da pena na tentativa.",
+    ],
+    gabarito: 1,
+    explicacao: "A alternativa B é INCORRETA: crimes culposos NÃO admitem tentativa, pois o agente não quer o resultado — a tentativa exige dolo (intenção de praticar e consumar o crime)."
+  },
+  {
+    art: 15,
+    enunciado: "Aplica-se a fórmula de Frank para distinguir tentativa de desistência voluntária. É correto afirmar que há desistência voluntária quando o agente pensa:",
+    opcoes: [
+      "'Quero continuar, mas não posso por razões externas.'",
+      "'Posso continuar, mas não quero.' — e efetivamente para.",
+      "'Não quero continuar e não posso, logo paro.'",
+      "'Posso continuar, mas fui impedido por terceiro.'",
+    ],
+    gabarito: 1,
+    explicacao: "Fórmula de Frank: 'Posso mas não quero' = desistência voluntária (art. 15). 'Quero mas não posso' = tentativa (art. 14). A desistência deve ser voluntária (não precisa ser espontânea), mas o agente deve ter a possibilidade de prosseguir e optar por não fazê-lo."
+  },
+  {
+    art: 18,
+    enunciado: "Motorista participa de racha em via pública e, prevendo a possibilidade de atropelar pedestres, decide prosseguir, assumindo o risco de causar a morte. Nesse caso, o elemento subjetivo é:",
+    opcoes: [
+      "Culpa inconsciente, pois o motorista não previa o resultado.",
+      "Culpa consciente, pois previu mas confiou que não ocorreria.",
+      "Dolo eventual, pois previu o resultado e assumiu o risco de produzi-lo.",
+      "Dolo direto de 1º grau, pois queria o resultado morte.",
+    ],
+    gabarito: 2,
+    explicacao: "Dolo eventual (art. 18, I): o agente previu o resultado e assumiu o risco de produzi-lo ('se ocorrer, tudo bem'). Difere da culpa consciente porque nesta o agente prevê mas acredita genuinamente que o resultado não vai ocorrer."
+  },
+  {
+    art: 20,
+    enunciado: "Turista estrangeiro traz para o Brasil planta considerada comum em seu país, sem saber que aqui é entorpecente proibido. Esse erro, se escusável, configura:",
+    opcoes: [
+      "Erro de proibição — exclui a culpabilidade.",
+      "Erro de tipo essencial escusável — exclui dolo e culpa, tornando o fato atípico.",
+      "Erro sobre a pessoa — não exclui dolo.",
+      "Erro acidental — não afeta a tipicidade.",
+    ],
+    gabarito: 1,
+    explicacao: "Erro de tipo essencial (art. 20): o agente tem falsa percepção sobre elemento do tipo (não sabia que a planta era entorpecente proibido). Se escusável (inevitável), exclui dolo E culpa → fato atípico. Se inescusável, exclui dolo mas mantém culpa."
+  },
+  {
+    art: 23,
+    enunciado: "O excesso na legítima defesa, conforme o art. 23, parágrafo único do Código Penal:",
+    opcoes: [
+      "É sempre impunível, pois quem defende a si mesmo nunca excede.",
+      "É punível apenas quando doloso.",
+      "É punível quando doloso ou culposo.",
+      "Transforma a excludente em atenuante genérica.",
+    ],
+    gabarito: 2,
+    explicacao: "Art. 23, parágrafo único: 'O agente, em qualquer das hipóteses deste artigo, responderá pelo excesso doloso ou culposo.' O excesso pode ser doloso (intencional, após cessar a agressão) ou culposo (imprudente, não avaliou corretamente a necessidade)."
+  },
+  {
+    art: 25,
+    enunciado: "Sobre a legítima defesa (art. 25 do CP), é CORRETO afirmar:",
+    opcoes: [
+      "Somente é possível em caso de agressão atual, não sendo admissível para agressão iminente.",
+      "A agressão deve necessariamente configurar crime para que se configure a legítima defesa.",
+      "É possível a legítima defesa de terceiro, mesmo sem vínculo com o agressor.",
+      "Os meios utilizados na legítima defesa devem ser os mesmos empregados pelo agressor.",
+    ],
+    gabarito: 2,
+    explicacao: "Legítima defesa de terceiro é expressamente prevista no art. 25 ('direito próprio ou de outrem'). A agressão não precisa ser crime — basta ser injusta (antijurídica). A defesa pode ser de agressão atual OU iminente. Os meios devem ser necessários (não necessariamente idênticos)."
+  },
+  {
+    art: 26,
+    enunciado: "Sobre a semi-imputabilidade (art. 26, parágrafo único do CP), é correto afirmar que o juiz adota o sistema:",
+    opcoes: [
+      "Duplo binário: aplica pena e medida de segurança cumulativamente.",
+      "Vicariante: aplica pena reduzida OU medida de segurança, nunca ambas.",
+      "Da absorção: a medida de segurança é sempre preferida à pena.",
+      "Liberal: o próprio réu escolhe entre pena e medida de segurança.",
+    ],
+    gabarito: 1,
+    explicacao: "O CP adota o sistema vicariante para semi-imputáveis: o juiz pode reduzir a pena de 1/3 a 2/3 OU substituí-la por medida de segurança, nunca ambas cumulativamente (afastou-se o sistema do duplo binário)."
+  },
+  {
+    art: 29,
+    enunciado: "Carlos induziu Pedro a praticar um furto, mas quis participar apenas como indutor, sem executar o crime. Quanto à teoria adotada pelo CP:",
+    opcoes: [
+      "Teoria pluralista: Carlos responde por crime diferente do praticado por Pedro.",
+      "Teoria monista: ambos respondem pelo mesmo crime (furto), com penas individualizadas.",
+      "Carlos é impunível, pois apenas induziu sem executar.",
+      "Carlos responde apenas como coautor, pois a instigação e o furto são o mesmo crime.",
+    ],
+    gabarito: 1,
+    explicacao: "O CP adota a teoria monista (unitária) no concurso de pessoas: todos os coautores e partícipes respondem pelo mesmo tipo penal (furto), embora com penas individualizadas conforme a culpabilidade. Carlos (partícipe indutor) responde pelo furto junto com Pedro (executor)."
+  }
+];
+
+let quizIndex = 0;
+let quizScore = 0;
+let quizRespondidas = [];
+let quizAtivo = false;
+
+function showPage(p) {
+  document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
+  document.querySelector('#page-' + p).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  const btns = document.querySelectorAll('.nav-btn');
+  const map = {home:0, artigos:1, resumo:2, quiz:3};
+  btns[map[p]]?.classList.add('active');
+  if (p === 'quiz' && !quizAtivo) { initQuiz(); quizAtivo = true; }
+  document.getElementById('main-content').scrollTop = 0;
+  closeSidebar();
+}
+
+function goArtigo(n) {
+  showPage('artigos');
+  const d = ARTIGOS[n];
+  if (!d) return;
+  document.querySelectorAll('.sidebar-item').forEach(i => i.classList.remove('active'));
+  const items = document.querySelectorAll('.sidebar-item');
+  const idx = n - 1;
+  if (items[idx]) items[idx].classList.add('active');
+
+  const boxesHtml = d.esquema.boxes.map(b => `
+    <div class="esquema-box ${b.cor}">
+      <div class="box-label">${b.label}</div>
+      ${b.texto}
+    </div>`).join('');
+
+  document.getElementById('artigo-content').innerHTML = `
+    <div class="artigo-card" id="art-${n}">
+      <div class="artigo-header">
+        <div class="artigo-num">Art. ${n}º</div>
+        <div class="artigo-meta">
+          <div class="artigo-titulo">${d.titulo}</div>
+          <span class="artigo-rubrica">${d.rubrica}</span>
+        </div>
+      </div>
+      <div class="artigo-texto">${d.texto}</div>
+      <div class="tabs" id="tabs-${n}">
+        <button class="tab-btn active" onclick="showTab(${n},'teoria')">📖 Teoria</button>
+        <button class="tab-btn" onclick="showTab(${n},'esquema')">🗂 Esquema</button>
+        <button class="tab-btn" onclick="showTab(${n},'exemplo')">💡 Exemplo</button>
+        <button class="tab-btn" onclick="showTab(${n},'macete')">🧠 Macete</button>
+        <button class="tab-btn" onclick="showTab(${n},'doutrina')">⚖️ Doutrina</button>
+      </div>
+      <div id="tab-teoria-${n}" class="tab-content active">
+        <div class="teoria-bloco">${d.teoria}</div>
+      </div>
+      <div id="tab-esquema-${n}" class="tab-content">
+        <div class="esquema">
+          <div class="esquema-titulo">${d.esquema.titulo}</div>
+          <div class="esquema-grid">${boxesHtml}</div>
+        </div>
+      </div>
+      <div id="tab-exemplo-${n}" class="tab-content">
+        <div class="exemplo-card">
+          <div class="exemplo-label">📌 Exemplo Prático</div>
+          <p>${d.exemplo}</p>
+        </div>
+      </div>
+      <div id="tab-macete-${n}" class="tab-content">
+        <div class="macete">
+          <div class="macete-icon">🔑</div>
+          <div class="macete-text">${d.macete}</div>
+        </div>
+        ${d.dica ? `<div class="dica-card"><div class="dica-label">💡 Dica de Prova</div><p>${d.dica}</p></div>` : ''}
+      </div>
+      <div id="tab-doutrina-${n}" class="tab-content">
+        <div class="alerta-card">
+          <div class="alerta-label">⚖️ Entendimento Doutrinário</div>
+          <p>${d.doutrina}</p>
+        </div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:1rem;flex-wrap:wrap;">
+        ${n > 1 ? `<button class="tab-btn" onclick="goArtigo(${n-1})" style="font-size:0.78rem">← Art. ${n-1}</button>` : ''}
+        ${n < 31 ? `<button class="tab-btn" onclick="goArtigo(${n+1})" style="font-size:0.78rem">Art. ${n+1} →</button>` : ''}
+      </div>
+    </div>`;
+  document.getElementById('main-content').scrollTop = 0;
+}
+
+function showTab(n, tab) {
+  const tabs = ['teoria','esquema','exemplo','macete','doutrina'];
+  tabs.forEach(t => {
+    document.getElementById('tab-' + t + '-' + n)?.classList.remove('active');
+  });
+  document.getElementById('tab-' + tab + '-' + n)?.classList.add('active');
+  document.querySelectorAll('#tabs-' + n + ' .tab-btn').forEach((b, i) => {
+    b.classList.toggle('active', ['teoria','esquema','exemplo','macete','doutrina'][i] === tab);
+  });
+}
+
+function initQuiz() {
+  quizIndex = 0; quizScore = 0; quizRespondidas = [];
+  renderQuestao();
+}
+
+function renderQuestao() {
+  if (quizIndex >= QUESTOES.length) {
+    renderResultado(); return;
+  }
+  const q = QUESTOES[quizIndex];
+  const pct = Math.round((quizIndex / QUESTOES.length) * 100);
+  const opcoesHtml = q.opcoes.map((o, i) => {
+    const letras = ['A','B','C','D'];
+    return `<button class="opcao-btn" onclick="responder(${i})" id="opcao-${i}">
+      <span class="opcao-letra">${letras[i]})</span>${o}
+    </button>`;
+  }).join('');
+  document.getElementById('quiz-area').innerHTML = `
+    <div class="quiz-progress">
+      <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:${pct}%"></div></div>
+      <span class="quiz-score-badge">✓ ${quizScore}/${QUESTOES.length}</span>
+    </div>
+    <div class="questao-card">
+      <div class="questao-num">Questão ${quizIndex + 1} de ${QUESTOES.length} — Art. ${q.art}º</div>
+      <div class="questao-texto">${q.enunciado}</div>
+      <div class="opcoes">${opcoesHtml}</div>
+      <div class="gabarito-box" id="gabarito-box">
+        <div class="gabarito-titulo">📘 Fundamentação:</div>
+        ${q.explicacao}
+      </div>
+    </div>`;
+}
+
+function responder(idx) {
+  const q = QUESTOES[quizIndex];
+  const btns = document.querySelectorAll('.opcao-btn');
+  btns.forEach(b => b.disabled = true);
+  btns[idx].classList.add(idx === q.gabarito ? 'correta' : 'errada');
+  if (idx !== q.gabarito) btns[q.gabarito].classList.add('correta');
+  if (idx === q.gabarito) quizScore++;
+  document.getElementById('gabarito-box').classList.add('show');
+  const area = document.getElementById('quiz-area');
+  const btn = document.createElement('button');
+  btn.className = 'quiz-btn';
+  btn.textContent = quizIndex + 1 < QUESTOES.length ? 'Próxima questão →' : 'Ver resultado';
+  btn.onclick = () => { quizIndex++; renderQuestao(); };
+  area.querySelector('.questao-card').appendChild(btn);
+}
+
+function renderResultado() {
+  const pct = Math.round((quizScore / QUESTOES.length) * 100);
+  const msg = pct >= 80 ? '🏆 Excelente! Você está bem preparado!' : pct >= 60 ? '👍 Bom desempenho! Continue revisando.' : '📚 Revise os artigos com mais atenção.';
+  document.getElementById('quiz-area').innerHTML = `
+    <div class="resultado-container">
+      <div class="resultado-num">${quizScore}/${QUESTOES.length}</div>
+      <div class="resultado-msg">${msg}<br><small style="color:var(--slate)">${pct}% de acertos</small></div>
+      <button class="quiz-btn" onclick="initQuiz()">🔄 Refazer o Quiz</button>
+      <button class="quiz-btn" style="background:transparent;color:var(--navy);border:1px solid var(--border);margin-left:8px" onclick="showPage('artigos');goArtigo(1)">📖 Revisar Artigos</button>
+    </div>`;
+}
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+}
+
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+}
+
+document.addEventListener('click', function(e) {
+  const sidebar = document.getElementById('sidebar');
+  const toggle = document.querySelector('.menu-toggle');
+  if (window.innerWidth <= 768 && sidebar.classList.contains('open') && !sidebar.contains(e.target) && !toggle.contains(e.target)) {
+    closeSidebar();
+  }
+});
+
+goArtigo(1);
+</script>
+</body>
+</html>
